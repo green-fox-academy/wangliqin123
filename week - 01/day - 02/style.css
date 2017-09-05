@@ -1,0 +1,62 @@
+body {
+  font-family: Courier;
+  background-image: url(topography.png);
+}
+
+main {
+  padding: 0% 10% 10% 10%;
+}
+nav {
+  background-color: #333333;
+  height: 50px;
+  text-align: right;
+  
+  
+}
+
+a {
+  color: #ff0099;
+}
+
+.menu {
+   padding-right: 50px;
+   
+}
+h1,
+h2 {
+  font-family: Open sans, bold
+
+}
+
+
+
+h1 {
+  font-size: 40px;
+}
+
+em {
+  font-style: normal;
+}
+
+h2 {
+
+  color: black
+
+}
+
+
+h3,
+h4 {
+  text-align: center;
+}
+
+
+h3 {
+  font-size: 10px;
+  margin: 100px 100px 60px 100px
+}
+
+
+h4 {
+  font-size: 30px;
+}
