@@ -1,0 +1,23 @@
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.block {
+  border: 1px solid black;
+  font-size: 18px;
+  padding: 10px;
+  width: 340px;
+}
+
+#first {
+  border-top: none;  
+}
+
+#last {
+  border-bottom: none;
+}
+
+.block:hover {
+  background: #EC6741;
+}
