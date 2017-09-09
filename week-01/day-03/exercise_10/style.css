@@ -1,0 +1,31 @@
+.block {
+  border: 1px solid black;
+  color: white;
+  font-family: Courier;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 340px;   
+}
+  
+#first {
+  background: #FF6347;
+  background-repeat: no-repeat;
+  background-size: 50px;
+}
+  
+#second {
+  background: #643579;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150px;
+}
+  
+#third {
+  background: #808080;
+  background-position-x: right; 
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: 60px;
+}
