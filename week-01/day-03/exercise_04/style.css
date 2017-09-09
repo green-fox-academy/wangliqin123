@@ -1,0 +1,18 @@
+h1 {
+  color: #E7AE30;
+  font: 18px;
+
+}
+
+p {
+  
+  font: 12px;
+  margin: 0px;
+  letter-spacing: -2px;
+  font-style: bolder;
+}
+
+body p:nth-child(3) {
+  letter-spacing: 2px;
+  margin-left: 20px;
+}

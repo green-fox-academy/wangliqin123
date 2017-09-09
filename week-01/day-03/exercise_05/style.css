@@ -1,0 +1,44 @@
+h1 {
+
+  color: #FF7061;
+  font: 20px;
+
+}
+
+p {
+  
+  word-break: break-all;
+
+}
+
+h2 {
+
+  color: #8B2DE2;
+  font: 14px;
+
+}
+
+
+ul {
+
+  list-style-type: square;
+  font: 12px;
+  
+}
+
+ol {
+
+  list-style: upper-roman;
+  font: 12px;
+  text-decoration-line: underline;
+  color: #FF80FF;
+
+}
+
+ol li:last-child {
+
+  color: black;
+  text-decoration-line: underline;
+  text-decoration-color: black;
+
+}

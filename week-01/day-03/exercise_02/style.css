@@ -1,0 +1,49 @@
+body {
+
+  margin: 0px;
+   
+}
+
+p {
+
+  border: 15px solid;
+  border-color: #4285F4;
+  color: #FEFDFF;
+  font: 36px sans-serif;
+  margin: 0px;
+  padding: 50px 0px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 350px;
+
+}
+
+p:nth-child(1) {
+
+  background: #E67676;
+  border-bottom: none;
+  
+}
+
+p:nth-child(2) {
+
+  background: #F2F062;
+  border-bottom: none;
+  border-top: none;
+
+}
+
+p:nth-child(3) {
+
+  background: #A9E6E6;
+  border-bottom: none;
+  border-top: none;
+
+}
+
+p:nth-child(4) {
+
+  background: #7692E4;
+  border-top: none;
+  
+}
