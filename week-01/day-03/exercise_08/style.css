@@ -1,0 +1,25 @@
+.block {
+  border: 2px solid #4285F4;
+  height: 100px;
+  margin-bottom: 12px;
+  width: 700px;
+}
+
+.inline {
+  background-color: #4587F4;
+  display: inline-block;
+  height: 50px;
+  left: 20px;
+  margin: 6px;
+  position: relative;
+  top: 20px;
+  width: 50px;
+}
+
+#box {
+  background-color: #643579;
+}
+
+#bottom {
+  background-color: #FF6347;
+}
