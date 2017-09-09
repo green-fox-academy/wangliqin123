@@ -1,0 +1,24 @@
+table {
+  border-spacing: 1rem;
+}
+
+td {
+  border-radius: 70px;
+  width: 140px;
+  height: 140px;
+  background-color: #0CEBDE; 
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  vertical-align: middle;
+  
+}
+
+#first {
+  background-color: #B90CEB;
+}
+
+#sixth {
+  background-color: #EBBE0C;
+}
