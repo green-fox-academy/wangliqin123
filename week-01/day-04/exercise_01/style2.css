@@ -1,0 +1,148 @@
+body {
+  margin: 30px;
+  padding: 0;
+  background-color: #DCD6CD;
+}
+
+form {
+  box-sizing: border-box;
+  background-color: #DCD6CD;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 800px;
+  width: 640px;
+  margin: auto;
+}
+
+.header {
+  padding: 10px;
+  margin: 15px 0 15px 0;
+  background-color: #DCD6CD;
+  color: #5D566F;
+  font-size: 40px;
+  height: 30px;
+  width: 620px;
+  display: inline-block;
+}
+
+.left-column {
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  background-color: #DCD6CD;
+  height: 400px;
+  width: 298px;
+  float: left;
+}
+
+.right-column {
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  background-color: #DCD6CD;
+  height: 400px;
+  width: 298px;
+  float: right;
+}
+
+.footer {
+  padding: 10px;
+  margin: 15px 0 15px 0;
+  background-color: #DCD6CD;
+  height: 200px;
+  width: 620px;
+  display: inline-block;
+}
+
+.left-column > div {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.left-box div:first-child {
+  border: 1px solid black;
+  height: 200px;
+  width: 145px;
+  float: left;
+  margin: 15px 0 0 0;
+}
+
+.left-box div:last-child {
+  border: 1px solid black;
+  height: 200px;
+  width: 145px;
+  float: right;
+  margin: 15px 0 0 0;
+}
+
+.left-normal:last-of-type {
+  border: 1px solid black;
+  height: 90px;
+  width: 295px;
+}
+
+.column-header {
+  padding: 5px 5px 5px 10px;
+  margin: 10px, 0, 10px, 0;
+  background: #938C97;
+  color: #ECEAEC;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 290px;
+}
+
+.column-text-input {
+  padding: 10px 0 5px 0;
+  font-weight: bold;
+  color: #473F5E;
+}
+
+.column-text-input2 {
+  padding: 10px 0 5px 0;
+  font-weight: bold;
+  color: #473F5E;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="url"] {
+  border-radius: 5px;
+  height: 25px;
+  padding-left: 5px;
+  width: 295px;
+}
+
+input[type="submit"] {
+  width: 250px;
+  height: 40px;
+  color: #5D566F;
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  margin: auto;
+  border: 1px solid #5D566F;
+  font-weight: 900;
+}
+
+textarea {
+  border-radius: 5px;
+  height: 150px;
+  padding-left: 5px;
+  width: 615px;
+  color: #5D566F;
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.column-text-input::after {
+  content: "*";
+  color: red;
+  font-size: 15px;
+}
+
+select {
+  border-radius: 5px;
+  height: 25px;
+  padding-left: 5px;
+  width: 305px;
+  color: #5D566F;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

@@ -1,0 +1,7 @@
+C:\Users\VatoLoco\greenfox\wangliqin123\week-02\day-01\exercise01\hellomesol\hellome\bin\Debug\hellome.exe.config
+C:\Users\VatoLoco\greenfox\wangliqin123\week-02\day-01\exercise01\hellomesol\hellome\bin\Debug\hellome.exe
+C:\Users\VatoLoco\greenfox\wangliqin123\week-02\day-01\exercise01\hellomesol\hellome\bin\Debug\hellome.pdb
+C:\Users\VatoLoco\greenfox\wangliqin123\week-02\day-01\exercise01\hellomesol\hellome\obj\Debug\hellome.csprojResolveAssemblyReference.cache
+C:\Users\VatoLoco\greenfox\wangliqin123\week-02\day-01\exercise01\hellomesol\hellome\obj\Debug\hellome.csproj.CoreCompileInputs.cache
+C:\Users\VatoLoco\greenfox\wangliqin123\week-02\day-01\exercise01\hellomesol\hellome\obj\Debug\hellome.exe
+C:\Users\VatoLoco\greenfox\wangliqin123\week-02\day-01\exercise01\hellomesol\hellome\obj\Debug\hellome.pdb
