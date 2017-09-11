@@ -7,7 +7,7 @@ namespace GreenFox
         static void Main(string[] args)
         {
             int i;
-
+            
             Console.WriteLine("enter a number");
 
             while (int.TryParse(Console.ReadLine(), out i))
