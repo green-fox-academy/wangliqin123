@@ -10,7 +10,7 @@ namespace GreenFox
             double heightInM = 1.78;
 
             Console.WriteLine(massInKg / (heightInM * heightInM));
-
+            
             Console.ReadLine();
         }
     }
