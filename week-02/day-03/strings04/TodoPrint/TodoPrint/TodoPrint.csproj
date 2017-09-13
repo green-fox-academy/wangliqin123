@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB2203C7-099E-4905-99BE-87C295ACCD13}</ProjectGuid>
+    <ProjectGuid>{70DAA854-13C4-4C46-B7C0-3F703BD5826F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TakesLonger</RootNamespace>
-    <AssemblyName>TakesLonger</AssemblyName>
+    <RootNamespace>TodoPrint</RootNamespace>
+    <AssemblyName>TodoPrint</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

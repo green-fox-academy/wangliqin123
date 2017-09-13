@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace TakesLonger
 {
@@ -6,11 +7,11 @@ namespace TakesLonger
     {
         public static void Main(string[] args)
         {
-            string quote = "Hofstadter\'s Law: It you expect, even when you take into account Hofstadter\'s Law.";
+            string quote = "Hofstadter's Law: It you expect, even when you take into account Hofstadter's Law.";
 
-            quote = quote.Insert(21, "always takes longer than ");
+            StringBuilder quote1 = new StringBuilder(quote);
+            Console.WriteLine(quote1.Insert(21 , "always takes longer than "));
 
-            Console.WriteLine(quote);
             Console.ReadLine();
         }
     }
