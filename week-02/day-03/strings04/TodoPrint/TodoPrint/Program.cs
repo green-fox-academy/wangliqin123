@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TodoPrint
 {
@@ -8,19 +12,15 @@ namespace TodoPrint
         {
             string todoText = " - Buy milk\n";
 
-            todoText = todoText.Insert(0, "My todo");
+            StringBuilder sb = new StringBuilder();
 
-            todoText = todoText.ToString(" - Download games");
-            // Add " - Download games" to the end of the todoText
-            // Add " - Diablo" to the end of the todoText but with indention
+            sb.AppendLine("My todo:");
+            sb.Append(todoText);
+            sb.AppendLine(" - Download games");
+            sb.AppendLine("\t - Diablo");
 
-            // Expected output:
-
-            // My todo:
-            //  - Buy milk
-            //  - Download games
-            //      - Diablo
-
+            todoText = sb.ToString();
+            
             Console.WriteLine(todoText);
             Console.ReadLine();
         }
