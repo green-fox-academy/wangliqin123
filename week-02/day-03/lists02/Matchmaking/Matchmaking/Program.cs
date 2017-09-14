@@ -14,6 +14,13 @@ namespace Matchmaking
             var boys = new List<string> { "Joe", "Fred", "Béla", "Todd", "Neef", "Jeff" };
             var order = new List<string>();
 
+            
+           
+            order.AddRange(girls());
+            order.AddRange(boys());
+            
+            
+            
             //girls.Concat(boys);
                 //order.AddRange(girls);
             //order.AddRange(boys);
@@ -21,8 +28,11 @@ namespace Matchmaking
 
 
             //order = girls.Concat(boys).ToList();
-
-            Console.WriteLine(girls);
+            foreach (string name in order)
+	            {
+                 Console.Write(order);
+	            }
+            
             
 
             Console.ReadLine();
