@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3FB9986-C8A4-42B9-A473-F31DDBA971C8}</ProjectGuid>
+    <ProjectGuid>{D5D00CE0-FE58-4FA8-93AF-82022EB9D0AE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DrawTriangle</RootNamespace>
     <AssemblyName>DrawTriangle</AssemblyName>

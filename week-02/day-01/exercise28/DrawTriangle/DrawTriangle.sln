@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawTriangle", "DrawTriangle\DrawTriangle.csproj", "{B3FB9986-C8A4-42B9-A473-F31DDBA971C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawTriangle", "DrawTriangle\DrawTriangle.csproj", "{D5D00CE0-FE58-4FA8-93AF-82022EB9D0AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B3FB9986-C8A4-42B9-A473-F31DDBA971C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3FB9986-C8A4-42B9-A473-F31DDBA971C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3FB9986-C8A4-42B9-A473-F31DDBA971C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3FB9986-C8A4-42B9-A473-F31DDBA971C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5D00CE0-FE58-4FA8-93AF-82022EB9D0AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D00CE0-FE58-4FA8-93AF-82022EB9D0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D00CE0-FE58-4FA8-93AF-82022EB9D0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D00CE0-FE58-4FA8-93AF-82022EB9D0AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C76BD602-D9F9-4091-82EB-F358245439CB}
+		SolutionGuid = {6C69F464-3792-4D88-B534-FE093221BFC6}
 	EndGlobalSection
 EndGlobal
