@@ -21,7 +21,7 @@ namespace IsInList
                 Console.WriteLine(false);
             }
 
-            Console.ReadLine();  
+            Console.ReadLine();
         }
     }
 }
