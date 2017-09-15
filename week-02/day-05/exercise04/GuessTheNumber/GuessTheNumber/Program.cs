@@ -13,17 +13,17 @@ namespace GuessTheNumber
             Random random = new Random();
 
             Console.Write("Enter the starting limit: ");
-            int value1 = int.TryParse(Console.ReadLine());
+            int value1 = int.Parse(Console.ReadLine());
 
             Console.Write("Enter the final limit: ");
-            int value2 = int.TryParse(Console.ReadLine());
+            int value2 = int.Parse(Console.ReadLine());
 
             int value = random.Next(value1, value2);
             int guess = 0;
             bool correct = false;
 
-            Console.WriteLine("I've the number between 1-100.");
-
+            Console.WriteLine("I've the number between {0}-{1}.", value1, value2);
+          
             while (!correct)
             {
                 Console.Write("Guess: ");
