@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{73D62319-C74F-4339-82F2-9E0EE50388F5}</ProjectGuid>
+    <ProjectGuid>{E28DF42D-002E-4DBB-A4D1-CFEDF8F1C6F8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Printer</RootNamespace>
-    <AssemblyName>Printer</AssemblyName>
+    <RootNamespace>HeWillNever</RootNamespace>
+    <AssemblyName>HeWillNever</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

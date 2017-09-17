@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Printer
 {
@@ -6,19 +10,19 @@ namespace Printer
     {
         static void Main(string[] args)
         {
-            string Printer = 
-            // - Create a function called `printer`
-            //   which prints the input String parameters
-            // - It can have any number of parameters
+            string[] fruitstring = { "apple", "plum", "peach", "melone" };
 
-            // Examples
-            // printer("first")
-            // printer("first", "second")
-            // printer("first", "second", "third", "fourh")
-            // ...
+            Printer(fruitstring);
             Console.ReadLine();
         }
+        static void Printer(params string[] fruitstring)
+        {
+            foreach (string fruits in fruitstring)
+            {
+                Console.WriteLine(fruits);
+            }
 
-        public static string Printer(string);
+        }
     }
-}
+}    
+
