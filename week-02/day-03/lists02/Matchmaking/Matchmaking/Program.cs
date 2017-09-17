@@ -14,27 +14,19 @@ namespace Matchmaking
             var boys = new List<string> { "Joe", "Fred", "Béla", "Todd", "Neef", "Jeff" };
             var order = new List<string>();
 
-            
-           
-            order.AddRange(girls());
-            order.AddRange(boys());
-            
-            
-            
-            //girls.Concat(boys);
-                //order.AddRange(girls);
-            //order.AddRange(boys);
-            ////girls.Count + boys.Count;
+            for (int i = 0; i < boys.Count; i++)
+            {
+                if (girls.Count > i)
+                {
+                    order.Add(girls[i]);
+                }
 
-
-            //order = girls.Concat(boys).ToList();
+                order.Add(boys[i]);
+            }
             foreach (string name in order)
 	            {
-                 Console.Write(order);
+                 Console.Write(name);
 	            }
-            
-            
-
             Console.ReadLine();
         }
     }
