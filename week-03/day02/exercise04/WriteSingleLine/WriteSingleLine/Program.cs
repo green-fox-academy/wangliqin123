@@ -11,7 +11,7 @@ namespace WriteSingleLine
     {
         static void Main(string[] args)
         {
-                string path = "my-file.txt";
+                string path = "your-file.txt";
                 using (StreamWriter writer = new StreamWriter(path))
                 {
                       writer.WriteLine("Lorand Szilagyi");  
