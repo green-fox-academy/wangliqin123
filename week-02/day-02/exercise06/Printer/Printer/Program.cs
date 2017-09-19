@@ -4,25 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Printer
+namespace Calculator
 {
-    class Program
+    public class Calculator
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            string[] fruitstring = { "apple", "plum", "peach", "melone" };
 
-            Printer(fruitstring);
+            Console.WriteLine("Please type in the expression:");
+            string input = Console.ReadLine();
+            int output;
+            List<string> list = input.Split(' ').ToList();
+            int a = Int32.Parse(list[1]);
+            int b = Int32.Parse(list[2]);
+
+            if (list[0] == "+") output = Add(a, b);
+
+            else if (list[0] == "-") output = Diff(a, b);
+
+            else if (list[0] == "*") output = Diff(a, b);
+
+            else if (list[0] == "/") output = Div(a, b);
+
+            else output = Mod(a, b);
+
+            Console.WriteLine(output);
             Console.ReadLine();
         }
-        static void Printer(params string[] fruitstring)
-        {
-            foreach (string fruits in fruitstring)
-            {
-                Console.WriteLine(fruits);
-            }
-
-        }
     }
-}    
-
+}
