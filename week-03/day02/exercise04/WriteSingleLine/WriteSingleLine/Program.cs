@@ -12,10 +12,18 @@ namespace WriteSingleLine
         static void Main(string[] args)
         {
                 string path = "your-file.txt";
+            try
+            {
                 using (StreamWriter writer = new StreamWriter(path))
                 {
-                      writer.WriteLine("Lorand Szilagyi");  
+                    writer.WriteLine("Lorand Szilagyi");
                 }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("cannot write this file");
+            }
+      
         }
     }
 }
