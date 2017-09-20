@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourRectangle", "FourRectangle\FourRectangle.csproj", "{B3AE6973-5E9C-4A05-9439-C62AF38268B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3AE6973-5E9C-4A05-9439-C62AF38268B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3AE6973-5E9C-4A05-9439-C62AF38268B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3AE6973-5E9C-4A05-9439-C62AF38268B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3AE6973-5E9C-4A05-9439-C62AF38268B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC178ABC-1515-40C3-BDBC-7FBF0CC8821A}
+	EndGlobalSection
+EndGlobal
