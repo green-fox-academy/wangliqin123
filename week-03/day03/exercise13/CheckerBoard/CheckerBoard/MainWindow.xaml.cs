@@ -52,6 +52,7 @@ namespace CheckerBoard
                 foxDraw.DrawRectangle(y, x, y, y);
                 x += y;
             }
+           
 
 
             

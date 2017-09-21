@@ -10,16 +10,18 @@ namespace String2
     {
         static void Main(string[] args)
         {
-            string word = "text";
-            Console.WriteLine(ChangeLetter(word));
+
+            Console.Write("Please type a word with letter 'x' :");
+            string word = Console.ReadLine();
+            Console.WriteLine(RemoveX(word));
             Console.ReadLine();
         }
 
-        public static string ChangeLetter(string word)
+        public static string RemoveX(string word)
         {
             if (word.Length > 0)
             {
-                return word[0].ToString().Replace('x', 'y') + ChangeLetter(word.Substring(1));
+                return word[0].ToString().Trim('x') + RemoveX(word.Substring(1));
             }
             else
             {

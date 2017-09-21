@@ -10,7 +10,7 @@ namespace Bunny1
     {
         static void Main(string[] args)
         {    
-            int bunny = 130;
+            int bunny = 0;
             Console.WriteLine(Bunnies(bunny));
             Console.ReadLine();
         }
