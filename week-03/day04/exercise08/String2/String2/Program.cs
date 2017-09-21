@@ -10,9 +10,9 @@ namespace String2
     {
         static void Main(string[] args)
         {
-
             Console.Write("Please type a word with letter 'x' :");
             string word = Console.ReadLine();
+
             Console.WriteLine(RemoveX(word));
             Console.ReadLine();
         }
