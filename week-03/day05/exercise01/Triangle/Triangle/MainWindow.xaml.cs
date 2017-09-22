@@ -24,34 +24,34 @@ namespace Triangle
             var foxDraw = new FoxDraw(canvas);
             int level = 6;
 
-            Point left = new Point(0, 0);
-            Point right = new Point(300, 0);
-            Point bottom = new Point(150, 300);
+            Point pointA = new Point(0, 0);
+            Point pointB = new Point(300, 0);
+            Point pointC = new Point(150, 300);
 
-            DrawTriangle(foxDraw, level, left, right, bottom);
+            DrawTriangle(foxDraw, level, pointA, pointB, pointC);
         }
 
-        public static void DrawTriangle(FoxDraw drawer, int level, Point left, Point right, Point bottom)
+        public static void DrawTriangle(FoxDraw drawer, int level, Point pointA, Point pointB, Point pointC)
         {
             if (level == 0)
             {
                 List<Point> pointTriangle = new List<Point>();
-                pointTriangle.Add(left);
-                pointTriangle.Add(right);
-                pointTriangle.Add(bottom);
+                pointTriangle.Add(pointA);
+                pointTriangle.Add(pointB);
+                pointTriangle.Add(pointC);
 
                 drawer.FillColor(Colors.White);
                 drawer.DrawPolygon(pointTriangle);
             }
             else
             {
-                Point top_mid = new Point((left.X + right.X) / 2f, (left.Y + right.Y) / 2f);
-                Point right_mid = new Point((right.X + bottom.X) / 2f, (right.Y + bottom.Y) / 2f);
-                Point left_mid = new Point((bottom.X + left.X) / 2f, (bottom.Y + left.Y) / 2f);
+                Point pointD = new Point((pointA.X + pointB.X) / 2f, (pointA.Y + pointB.Y) / 2f);
+                Point pointE = new Point((pointB.X + pointC.X) / 2f, (pointB.Y + pointC.Y) / 2f);
+                Point pointF = new Point((pointC.X + pointA.X) / 2f, (pointC.Y + pointA.Y) / 2f);
 
-                DrawTriangle(drawer, level - 1, left, top_mid, left_mid);
-                DrawTriangle(drawer, level - 1, top_mid, right, right_mid);
-                DrawTriangle(drawer, level - 1, left_mid, right_mid, bottom);
+                DrawTriangle(drawer, level - 1, pointA, pointD, pointF);
+                DrawTriangle(drawer, level - 1, pointD, pointB, pointE);
+                DrawTriangle(drawer, level - 1, pointF, pointE, pointC);
             }
         }
     }
