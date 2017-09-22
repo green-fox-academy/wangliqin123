@@ -35,13 +35,13 @@ namespace Triangle
         {
             if (level == 0)
             {
-                List<Point> pointT = new List<Point>();
-                pointT.Add(left);
-                pointT.Add(right);
-                pointT.Add(bottom);
+                List<Point> pointTriangle = new List<Point>();
+                pointTriangle.Add(left);
+                pointTriangle.Add(right);
+                pointTriangle.Add(bottom);
 
                 drawer.FillColor(Colors.White);
-                drawer.DrawPolygon(pointT);
+                drawer.DrawPolygon(pointTriangle);
             }
             else
             {
