@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SCarpet.Properties
+namespace SierpinskiCarpet.Properties
 {
 
 
