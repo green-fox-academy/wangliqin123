@@ -4,9 +4,9 @@ namespace Inheritence
 {
     class Person
     {
-        public string name;
-        public int age;
-        public string gender;
+        protected string name;
+        protected int age;
+        protected string gender;
 
         public Person(string name, int age, string gender)
         {
@@ -22,12 +22,12 @@ namespace Inheritence
             gender = "female";
         }
 
-        public void Introduce()
+        public virtual void Introduce()
         {
-            Console.WriteLine("Hi, I'm" + name + ", a" + age + "year old" + gender + ".");
+            Console.WriteLine("Hi, I'm " + name + ", a " + age + " year old " + gender + ".");
         }
 
-        public void GetGoal()
+        public virtual void GetGoal()
         {
             Console.WriteLine("My goal is: Live for the moment!");
         }  

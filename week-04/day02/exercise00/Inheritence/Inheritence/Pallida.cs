@@ -11,24 +11,25 @@ namespace Inheritence
 
         public Pallida()
         {
-            List<Student> students = new List<Student>();
-            List<Mentor> mentors = new List<Mentor>();
+            students = new List<Student>();
+            mentors = new List<Mentor>();
+            className = "Alpaga";
         }
 
         public void AddStudent(Student student)
         {
 
-            students.Add(new Student());
+            students.Add(student);
         }
 
         public void AddMentor(Mentor mentor)
         {
-            mentors.Add(new Mentor());
+            mentors.Add(mentor);
         }
 
         public void Info()
         {
-            Console.WriteLine("Pallida Alpaga class has" + students.Count + "and" + mentors.Count + "mentors.");
+            Console.WriteLine("Pallida" + className + "class has" + students.Count + "and" + mentors.Count + "mentors.");
         }   
     }
 }

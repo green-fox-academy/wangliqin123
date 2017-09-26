@@ -7,26 +7,38 @@ namespace Inheritence
         public string previousOrganization;
         public int skippedDays;
 
-        public Student()
+        public Student(string name, int age, string gender, string previousOrganization)
         {
-            previousOrganization = "The School of Life";
-            skippedDays = 0;
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.previousOrganization = previousOrganization;
+            skippedDays = 0;     
         }
 
-        public new void Introduce()
+        public Student()
+        {
+            name = "Jane Doe";
+            age = 30;
+            gender = "female";
+            previousOrganization = "The School of Life";
+            skippedDays = 0;         
+        }
+
+        public override void Introduce()
         {
             Console.WriteLine("Hi, I'm" + name + ", a" + age + "year old" + gender + "from" +
                              previousOrganization + "who skipped" + skippedDays + "days from the course already.");
         }
 
-        public new void GetGoal()
+        public override void GetGoal()
         {
             Console.WriteLine("Be a junior software developer.");
         }
 
-        public void SkipDays()
+        public void SkipDays(int numberOfDays)
         {
-            Console.WriteLine(skippedDays);
+            skippedDays += numberOfDays;
         }  
     }
 }
