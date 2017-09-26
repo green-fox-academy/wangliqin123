@@ -11,32 +11,31 @@ namespace Dominoo
         public static void Main(string[] args)
         {
             var dominoes = InitializeDominoes();
-            // You have the list of Dominoes
-            // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
-            // Create a function to write the dominous to the console in the following format
-            // eg: [2, 4], [4, 3], [3, 5] ...
+       
             var newDominoes = new List<Dominoo>();
             newDominoes.Add(dominoes[0]);
-            dominoes.RemoveAt(0);
+            //dominoes.RemoveAt(0);
 
-            SortDominoes(dominoes);
+            SortDominoes(dominoes, newDominoes);
         }
 
-        public static void SortDominoes(List<Dominoo> dominoes)
+        public static void SortDominoes(List<Dominoo> dominoes, List<Dominoo> newDominoes)
         {
             for (int i = 0; i < dominoes.Count; i++)
             {
-                if (dominoes[1].GetValues()[0] != dominoes[0].GetValues()[1])
-                {
-                   
-                }
-                else
+                while (dominoes[i].GetValues()[1] != dominoes[i+1].GetValues()[0])
                 {
                     dominoes.Add(newDominoes[1]);
-                }
-                return;
+                }   
             }
+            foreach (var dominos in newDominoes)
+            {
+                Console.Write("[{0} {1}] ", dominos.GetValues()[0], dominos.GetValues()[1]);
+                
+            }
+            Console.ReadLine();
         }
+
 
         public static List<Dominoo> InitializeDominoes()
         {

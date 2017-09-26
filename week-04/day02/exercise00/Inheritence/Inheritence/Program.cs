@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inheritence
 {
@@ -10,7 +7,7 @@ namespace Inheritence
     {
         static void Main(string[] args)
         {
-            ArrayList people = new ArrayList();
+            List<Person> people = new List<Person>();
 
             Person mark = new Person("Mark", 46, "male");
             people.Add(mark);
@@ -38,7 +35,7 @@ namespace Inheritence
                 sponsor.Hire();
             }
 
-            for (Person person : people)
+            foreach (var person in people)
             {
                 person.Introduce();
                 person.GetGoal();

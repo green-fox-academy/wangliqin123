@@ -1,41 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inheritence
 {
-    class Student
+    class Student : Person
     {
-        public string Name;
-        public int Age;
-        public string Gender;
-        public string PreviousOrganization;
-        public int SkippedDays;
+        public string previousOrganization;
+        public int skippedDays;
 
-        public void Introduce()
+        public Student()
         {
-            Console.WriteLine("Hi, I'm" + Name + ", a" + Age + "year old" + Gender + "from" +
-                             PreviousOrganization + "who skipped" + SkippedDays + "days from the course already.");
+            previousOrganization = "The School of Life";
+            skippedDays = 0;
         }
 
-        public void GetGoal()
+        public new void Introduce()
+        {
+            Console.WriteLine("Hi, I'm" + name + ", a" + age + "year old" + gender + "from" +
+                             previousOrganization + "who skipped" + skippedDays + "days from the course already.");
+        }
+
+        public new void GetGoal()
         {
             Console.WriteLine("Be a junior software developer.");
         }
 
-        public void SkipDays(numberOfDays)
+        public void SkipDays()
         {
-            Console.WriteLine(SkippedDays + numberOfDays);
-        }
-        public Student(string Name, int Age, string Gender, string PreviousOrganization)
-        {
-            Name = "Jane Doe";
-            Age = 30;
-            Gender = "female";
-            PreviousOrganization = "The School of Life";
-            SkippedDays = 0;
-        }
+            Console.WriteLine(skippedDays);
+        }  
     }
 }

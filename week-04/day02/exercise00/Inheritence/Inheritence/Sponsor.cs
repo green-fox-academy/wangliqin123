@@ -1,42 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inheritence
 {
-    class Sponsor
+    class Sponsor : Person
     {
-        public string Name;
-        public int Age;
-        public string Gender;
-        public string Company;
-        public int HiredStudents;
+        public string company;
+        public int hiredStudents;
 
-        public void Introduce()
+        public Sponsor()
         {
-            Console.WriteLine("Hi, I'm" + Name + ", a" + Age + "year old" + Gender + "who represents" + Company + "and hired"
-                              + HiredStudents + "students so far.");
+            company = "Google";
+            hiredStudents = 0;
         }
 
-        public void GetGoal()
+        public new void Introduce()
+        {
+            Console.WriteLine("Hi, I'm" + name + ", a" + age + "year old" + gender + "who represents" + company + "and hired"
+                              + hiredStudents + "students so far.");
+        }
+
+        public new void GetGoal()
         {
             Console.WriteLine("Hire brilliant junior software developers.");
         }
 
         public void Hire()
         {
-            Console.WriteLine(HiredStudents + 1);
-        }
-
-        public Sponsor(string Name, int Age, string Gender, string Company)
-        {
-            Name = "Jane Doe";
-            Age = 30;
-            Gender = "female";
-            Company = "Google";
-            HiredStudents = 0;
-        }
+            Console.WriteLine(hiredStudents + 1);
+        }  
     }
 }
