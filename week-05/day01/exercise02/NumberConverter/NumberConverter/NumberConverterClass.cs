@@ -10,6 +10,8 @@ namespace NumberConverter
     {
         public string NumbConvertToWords(int input)
         {
+            string convertedNumber = input.ToString();
+            string hundredAnd = "hundred and";
             return "seven hundred and fourty five";
         }
     }

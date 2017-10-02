@@ -81,5 +81,15 @@ namespace AnagramTest
 
             Assert.AreEqual(output, anagramClass.IsAnagram(input1, input2));
         }
+
+        [Test]
+        public void TestAnagram_WhenInputNull_ThenFalse()
+        {
+            string input1 = null;
+            string input2 = "al ma";
+            bool output = false;
+
+            Assert.AreEqual(output, anagramClass.IsAnagram(input1, input2));
+        }
     }
 }

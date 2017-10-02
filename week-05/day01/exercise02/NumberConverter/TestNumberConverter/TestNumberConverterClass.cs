@@ -21,5 +21,14 @@ namespace TestNumberConverter
 
             Assert.AreEqual(output, numberConverterClass.NumbConvertToWords(input));
         }
+
+        [Test]
+        public void NumbConvertToWords_WhenThanString745()
+        {
+            int input = 640;
+            string output = "six hundred and fourty";
+
+            Assert.AreEqual(output, numberConverterClass.NumbConvertToWords(input));
+        }
     }
 }
