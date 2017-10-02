@@ -17,17 +17,17 @@ namespace Anagram
             Array.Sort(charArray1);
             Array.Sort(charArray2);
 
-            if (input1.Length != input2.Length || input1 == string.Empty || input2 == string.Empty)
+            if (input1 == string.Empty || input2 == string.Empty)
             {
                 return false;
             }
-            string newInput1 = new string(charArray1);
-            string newInput2 = new string(charArray2);
+            string newInput1 = new string(charArray1).Trim(' ');
+            string newInput2 = new string(charArray2).Trim(' ');
             if (newInput1 == newInput2)
             {
                 return true;
             }
-            return false;
-        }
+            return false;   
+        }       
     }
 }
