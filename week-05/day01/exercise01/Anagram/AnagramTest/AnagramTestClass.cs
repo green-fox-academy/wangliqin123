@@ -83,10 +83,20 @@ namespace AnagramTest
         }
 
         [Test]
-        public void TestAnagram_WhenInputNull_ThenFalse()
+        public void TestAnagram_WhenInput1Null_ThenFalse()
         {
             string input1 = null;
             string input2 = "al ma";
+            bool output = false;
+
+            Assert.AreEqual(output, anagramClass.IsAnagram(input1, input2));
+        }
+
+        [Test]
+        public void TestAnagram_WhenInput2Null_ThenFalse()
+        {
+            string input1 = "alma";
+            string input2 = null;
             bool output = false;
 
             Assert.AreEqual(output, anagramClass.IsAnagram(input1, input2));

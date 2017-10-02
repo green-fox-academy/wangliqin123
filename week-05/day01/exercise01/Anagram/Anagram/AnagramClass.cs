@@ -10,7 +10,7 @@ namespace Anagram
 
         public bool IsAnagram(string input1, string input2)
         {
-            if (input1 != null)
+            if (input1 != null && input2 != null)
             {
                 string input1Low = input1.ToLower();
                 string input2Low = input2.ToLower();
