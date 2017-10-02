@@ -5,7 +5,6 @@ using Anagram;
 namespace AnagramTest
 {
     [TestFixture]
-
     class AnagramTestClass
     {
         AnagramClass anagramClass = new AnagramClass();
