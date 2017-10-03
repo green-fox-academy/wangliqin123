@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GardenApp
 {
-    class Plant
+    class Plant : Garden
     {
         string treeColor = "purple";
         string treeColorOther = "orange";
