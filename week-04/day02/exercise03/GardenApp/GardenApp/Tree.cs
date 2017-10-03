@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 
 namespace GardenApp
 {
-    class Tree
+    class Tree : Plant
     {
-             
-        int treeWaterAmount = 10;
-        double waterAbsorb = 0.4;
-    }
-
-    public void TreeWatering(int treeWaterAmount)
-    {
-        if (treeWaterAmount < 10)
+        public Tree(double waterAbsorb, int waterAmount)
         {
-            Console.WriteLine("Tree needs water");
+            this.waterAbsorb = 0.4;
+            this.waterAmount = 10;
         }
     }
 }

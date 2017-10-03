@@ -8,9 +8,12 @@ namespace GardenApp
 {
     class Plant : Garden
     {
+        int color
         string treeColor = "purple";
         string treeColorOther = "orange";
         string flowerColor = "yellow";
         string flowerColorOther = "blue";
+        protected double waterAbsorb;
+        protected int waterAmount;
     }
 }

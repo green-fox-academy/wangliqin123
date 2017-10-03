@@ -8,14 +8,10 @@ namespace GardenApp
 {
     class Flower : Plant
     {
-        
-        int flowerWaterAmount;
-        double waterAbsorb = 0.75;
-
-        public Flower()
+        public Flower(double waterAbsorb, int waterAmount)
         {
-            this.flowerWaterAmount = 3;
+            this.waterAbsorb = 0.75;
+            this.waterAmount = 5;
         }
-
-    }
+    }  
 }
