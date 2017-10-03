@@ -16,20 +16,17 @@ namespace Inheritence
 
         public Mentor()
         {
-            name = "Jane Doe";
-            age = 30;
-            gender = "female";
             level = "intermediate";
         }
 
         public override void Introduce()
         {
-            Console.WriteLine("Hi, I'm" + name + ", a" + age + "year old" + gender + level + "mentor.");
+            Console.WriteLine("Hi, I'm " + name + ", a " + age + " year old " + gender + " " + level + " mentor.");
         }
 
         public override void GetGoal()
         {
-            Console.WriteLine("Educate brilliant junior software developers.");
+            Console.WriteLine("My goal is: Educate brilliant junior software developers.");
         }  
     }
 }

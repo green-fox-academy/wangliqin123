@@ -35,8 +35,8 @@ namespace SierpinskiCarpet
                 double x2 = x + wid * 2f;
                 double y2 = y + hgt * 2f;
 
-                drawer.BackgroundColor(Colors.Black);
-                drawer.FillColor(Colors.Black);
+                drawer.BackgroundColor(Colors.IndianRed);
+                drawer.FillColor(Colors.Blue);
                 drawer.StrokeColor(Colors.White);
 
                 DrawCarpet(drawer, level - 1, wid, hgt, x, y);

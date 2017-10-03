@@ -12,15 +12,22 @@ namespace Dominoo
         {
             var dominoes = InitializeDominoes();
        
-            var newDominoes = new List<Dominoo>();
-            newDominoes.Add(dominoes[0]);
-            //dominoes.RemoveAt(0);
+            
+            SortDominoes(dominoes);
+            foreach (var dominos in sortedDominoes)
+            {
+                Console.Write("[{0} {1}] ", dominos.GetValues()[0], dominos.GetValues()[1]);
 
-            SortDominoes(dominoes, newDominoes);
+            }
+            Console.ReadLine();
         }
 
-        public static void SortDominoes(List<Dominoo> dominoes, List<Dominoo> newDominoes)
+        public static List<int> SortDominoes(List<Dominoo> dominoes)
         {
+            var newDominoes = new List<Dominoo>();
+            newDominoes.Add(dominoes[0]);
+            dominoes.RemoveAt(0);
+
             for (int i = 0; i < dominoes.Count; i++)
             {
                 while (dominoes[i].GetValues()[1] != dominoes[i+1].GetValues()[0])
@@ -28,12 +35,7 @@ namespace Dominoo
                     dominoes.Add(newDominoes[1]);
                 }   
             }
-            foreach (var dominos in newDominoes)
-            {
-                Console.Write("[{0} {1}] ", dominos.GetValues()[0], dominos.GetValues()[1]);
-                
-            }
-            Console.ReadLine();
+           
         }
 
 

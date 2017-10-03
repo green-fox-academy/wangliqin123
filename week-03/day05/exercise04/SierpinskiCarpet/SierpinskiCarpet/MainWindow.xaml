@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SierpinskiCarpet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="331" Width="308">
+        Title="MainWindow" Height="631" Width="608">
     <Grid>
-        <Canvas Name="canvas" Height="300" Width="300"/>
+        <Canvas Name="canvas" Height="600" Width="600"/>
     </Grid>
 </Window>

@@ -29,7 +29,7 @@ namespace Inheritence
 
         public virtual void GetGoal()
         {
-            Console.WriteLine("My goal is: Live for the moment!");
+            Console.WriteLine("My goal is: Live for the moment.");
         }  
     }
 } 

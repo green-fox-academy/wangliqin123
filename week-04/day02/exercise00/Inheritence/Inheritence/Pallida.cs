@@ -9,16 +9,15 @@ namespace Inheritence
         public List<Student> students;
         public List<Mentor> mentors;
 
-        public Pallida()
+        public Pallida(string className)
         {
             students = new List<Student>();
             mentors = new List<Mentor>();
-            className = "Alpaga";
+            this.className = className;
         }
 
         public void AddStudent(Student student)
         {
-
             students.Add(student);
         }
 
@@ -29,7 +28,7 @@ namespace Inheritence
 
         public void Info()
         {
-            Console.WriteLine("Pallida" + className + "class has" + students.Count + "and" + mentors.Count + "mentors.");
+            Console.WriteLine("Pallida " + className + " class has " + students.Count + " students" + " and " + mentors.Count + " mentors.");
         }   
     }
 }
