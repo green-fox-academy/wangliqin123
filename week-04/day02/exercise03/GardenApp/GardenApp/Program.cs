@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GardenApp
 {
@@ -8,12 +7,21 @@ namespace GardenApp
         static void Main(string[] args)
         {
             Garden garden = new Garden();
+            Flower flower1 = new Flower("yellow");
+            Flower flower2 = new Flower("blue");
+            Tree tree1 = new Tree("purple");
+            Tree tree2 = new Tree("orange");
 
-            garden.PrintPlants();
-            garden.WaterGarden();
-            garden.PrintPlants();
-            garden.WaterGarden();
-            garden.PrintPlants();
+            garden.Add(flower1);
+            garden.Add(flower2);
+            garden.Add(tree1);
+            garden.Add(tree2);
+
+            garden.GetStatus();
+            garden.Watering(40);
+            garden.GetStatus();
+            garden.Watering(70);
+            garden.GetStatus();
 
             Console.ReadLine();
         }

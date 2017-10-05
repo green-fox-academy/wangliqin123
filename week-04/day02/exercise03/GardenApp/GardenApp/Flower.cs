@@ -1,14 +1,13 @@
-﻿using System;
-
-namespace GardenApp
+﻿namespace GardenApp
 {
     class Flower : Plant
     {
-        public Flower(string name) : base(name)
-        {       
+        public Flower(string color)
+        {
             this.type = "flower";
-            this.minWaterAmount = 5;
-            this.waterAbsorb = 0.75f;  
+            this.color = color;
+            this.waterNeeded = 5;
+            this.absorb = 0.75;
         }
-    }  
+    }
 }

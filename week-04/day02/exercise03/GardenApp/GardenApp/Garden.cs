@@ -5,37 +5,52 @@ namespace GardenApp
 {
     class Garden
     {
-        List<Plant> plants;
-        protected float water;
+        List<Plant> plants = new List<Plant>();
 
-        public Garden()
+        public void Add(Plant plant)
         {
-            this.water = 40;
-            plants = new List<Plant>();
-            plants.Add(new Flower("yellow"));
-            plants.Add(new Flower("blue"));
-            plants.Add(new Tree("purple"));
-            plants.Add(new Tree("orange"));
- 
+            plants.Add(plant);
         }
 
-        public void PrintPlants()
+        public int ThirstyCounter()
+        {
+            int thirstyPlants = 0;
+            foreach (Plant plant in plants)
+            {
+                if (plant.IsThirsty())
+                {
+                    thirstyPlants++;
+                }
+            }
+            return thirstyPlants;
+        }
+
+        public void Watering(int wateringNumber)
+        {
+            Console.WriteLine("Watering with {0}", wateringNumber);
+            double waterPortion = wateringNumber / ThirstyCounter();
+            foreach (Plant plant in plants)
+            {
+                if (plant.IsThirsty())
+                {
+                    plant.waterAmount += waterPortion * plant.absorb;
+                }
+            }
+        }
+
+        public void GetStatus()
         {
             foreach (Plant plant in plants)
             {
-                Console.WriteLine(plant.PlantInfo());
+                if (plant.IsThirsty())
+                {
+                    Console.WriteLine("The {0} {1} needs water ", plant.color, plant.type);
+                }
+                else
+                {
+                    Console.WriteLine("The {0} {1} doesn't need water ", plant.color, plant.type);
+                }
             }
         }
-
-        public void WaterGarden()
-        {
-            for (int i = 0; i < plants.Count; i++)
-            {
-                plants[i].Watering();
-                plants[i].IsPlantThirsty();
-            }
-            Console.WriteLine("Watering with {0}", water);
-        }
-        
     }
 }

@@ -1,35 +1,16 @@
-﻿using System;
-
-namespace GardenApp
+﻿namespace GardenApp
 {
-    class Plant : Garden
+    class Plant
     {
-        string Name;
-        protected string type;
-        protected float minWaterAmount;
-        protected float waterAbsorb;
-        private float currentWaterAmount;
+        public string color;
+        public string type;
+        public int waterNeeded;
+        public double absorb;
+        public double waterAmount;
 
-        public Plant(string name)
+        public bool IsThirsty()
         {
-            Name = name;
+            return waterAmount < waterNeeded;
         }
-
-        public bool IsPlantThirsty()
-        {  
-            return currentWaterAmount < minWaterAmount;
-        }
-
-        public void Watering()
-        {
-            currentWaterAmount += water * waterAbsorb;
-        }
-
-        public string PlantInfo()
-        {
-            string needWater = IsPlantThirsty() ? "needs water." : "doesnt need water.";
-            string type = waterAbsorb == 0.75 ? "flower" : "tree";
-            return String.Format("The {0} {1} {2} ", type, Name, needWater);
-        }
-    }  
+    }
 }
