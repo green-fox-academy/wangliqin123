@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GardenApp
 {
     class Tree : Plant
     {
-        public Tree(double waterAbsorb, int waterAmount)
+        public Tree(int color)
         {
+            this.type = "Tree";
+            base.color = COLORS[color];
+            this.minWaterAmount = 10;
             this.waterAbsorb = 0.4;
-            this.waterAmount = 10;
         }
     }
 }
