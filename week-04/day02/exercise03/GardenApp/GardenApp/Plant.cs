@@ -4,12 +4,16 @@ namespace GardenApp
 {
     class Plant : Garden
     {
-        protected static readonly string[] COLORS = new string[] { "blue", "orange", "purple", "yellow" };
-        public string color;
+        string Name;
         protected string type;
-        protected int minWaterAmount;
-        protected double waterAbsorb;
-        private double currentWaterAmount;   
+        protected float minWaterAmount;
+        protected float waterAbsorb;
+        private float currentWaterAmount;
+
+        public Plant(string name)
+        {
+            Name = name;
+        }
 
         public bool IsPlantThirsty()
         {  
@@ -25,7 +29,7 @@ namespace GardenApp
         {
             string needWater = IsPlantThirsty() ? "needs water." : "doesnt need water.";
             string type = waterAbsorb == 0.75 ? "flower" : "tree";
-            return String.Format("The {0} {1} {2}", type, color, needWater);
+            return String.Format("The {0} {1} {2} ", type, Name, needWater);
         }
     }  
 }

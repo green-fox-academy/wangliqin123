@@ -5,12 +5,11 @@ namespace GardenApp
 {
     class Tree : Plant
     {
-        public Tree(int color)
+        public Tree(string name) : base(name)
         {
-            this.type = "Tree";
-            base.color = COLORS[color];
+            this.type = "tree";
             this.minWaterAmount = 10;
-            this.waterAbsorb = 0.4;
+            this.waterAbsorb = 0.4f;
         }
     }
 }

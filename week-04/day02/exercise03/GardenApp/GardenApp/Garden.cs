@@ -5,17 +5,18 @@ namespace GardenApp
 {
     class Garden
     {
-        public List<Plant> plants;
-        protected int water;
+        List<Plant> plants;
+        protected float water;
 
         public Garden()
         {
             this.water = 40;
             plants = new List<Plant>();
-            plants.Add(new Flower(3));
-            plants.Add(new Flower(0));
-            plants.Add(new Tree(2));
-            plants.Add(new Tree(1));
+            plants.Add(new Flower("yellow"));
+            plants.Add(new Flower("blue"));
+            plants.Add(new Tree("purple"));
+            plants.Add(new Tree("orange"));
+ 
         }
 
         public void PrintPlants()

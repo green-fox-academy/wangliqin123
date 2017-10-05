@@ -4,12 +4,11 @@ namespace GardenApp
 {
     class Flower : Plant
     {
-        public Flower(int color)
-        {
-            this.type = "Flower";
-            base.color = COLORS[color];
+        public Flower(string name) : base(name)
+        {       
+            this.type = "flower";
             this.minWaterAmount = 5;
-            this.waterAbsorb = 0.75;  
+            this.waterAbsorb = 0.75f;  
         }
     }  
 }
