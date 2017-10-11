@@ -3,10 +3,15 @@ using System.IO;
 
 namespace Animals
 {
-    class Commands
+    class Animals
     {
         private string path = @"./favourites.txt";
         private string text;
+
+        public Animals()
+        {
+            text = File.ReadAllText(path);
+        }
 
         public void Usage()
         {
@@ -15,8 +20,6 @@ namespace Animals
 
         public void AddAnimal(string[] args)
         {
-            text = File.ReadAllText(path);
-
             using (StreamWriter writer = new StreamWriter(path, true))
             {
                 for (int i = 0; i < args.Length; i++)

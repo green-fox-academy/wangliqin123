@@ -1,20 +1,18 @@
-﻿using System.Collections.Generic;
-
-namespace Animals
+﻿namespace Animals
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Commands commands = new Commands();
+            Animals animals = new Animals();
 
             if (args.Length > 0)
             {
-                commands.AddAnimal(args);            
-            }         
+                animals.AddAnimal(args);
+            }
             else
             {
-                commands.Usage();
+                animals.Usage();
             }
         }
     }
