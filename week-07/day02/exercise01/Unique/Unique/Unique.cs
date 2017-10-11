@@ -7,13 +7,7 @@ namespace Unique
     {
         public static char[] UniqueCharacters(string inputWord)
         {
-            char[] letters = inputWord.Replace(" ", "").ToLower().ToCharArray().Distinct().ToArray();
-
-            foreach (var character in letters)
-            {
-                Console.Write("\"{0}\", ", character);
-            }
-            return letters;
+            return inputWord.Replace(" ", "").ToLower().ToCharArray().Distinct().ToArray();
         }
     }
 }

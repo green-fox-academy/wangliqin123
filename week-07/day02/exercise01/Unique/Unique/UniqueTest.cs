@@ -8,16 +8,16 @@ namespace Unique
         [Test]
         public void UniqueCharactersTest()
         {
-            string inputWord = "cat";
+            string inputWord = "catt";
             char[] output = { 'c', 'a', 't' };
 
             Assert.AreEqual(output, Unique.UniqueCharacters(inputWord));
         }
 
         [Test]
-        public void UniqueCharactersTestIsUpper()
+        public void UniqueCharactersTestWithUpperCharacter()
         {
-            string inputWord = "Cat";
+            string inputWord = "Catt";
             char[] output = { 'c', 'a', 't' };
 
             Assert.AreEqual(output, Unique.UniqueCharacters(inputWord));
@@ -26,7 +26,7 @@ namespace Unique
         [Test]
         public void UniqueCharactersTestWhenInsideSpace()
         {
-            string inputWord = "ca t";
+            string inputWord = "ca tt";
             char[] output = { 'c', 'a', 't' };
 
             Assert.AreEqual(output, Unique.UniqueCharacters(inputWord));
