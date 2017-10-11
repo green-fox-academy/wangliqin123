@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TakeMeToThe
 {
-    public class Sweets
+    public class Sweets : CandyShop
     {
-        protected int price;
+        public int price;
         protected int sugarCommodity;
 
         //public Sweets(int sugarAmount) : base(sugarAmount)

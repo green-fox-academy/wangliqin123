@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TakeMeToThe
 {
-    class Lollipop : Sweets
+    public class Lollipop : Sweets
     {
+        public Lollipop()
+        {
+            this.price = 10;
+            this.sugarCommodity = 5;
+        }
     }
 }
