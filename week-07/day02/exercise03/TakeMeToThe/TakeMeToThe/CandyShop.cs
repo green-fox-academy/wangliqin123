@@ -8,22 +8,28 @@ namespace TakeMeToThe
 {
     public class CandyShop
     {
-        internal static readonly object CANDY;
+        protected readonly object CANDY;
         internal static readonly object LOLLIPOP;
         protected double incomeMoney;
         protected int sugarAmount;
         protected int sugarPrice;
         Sweets sweets = new Sweets();
+        Candy candy = new Candy();
+
+        List<object> candies = new List<object>();
 
         public CandyShop(int sugarAmount)
         {
             this.sugarPrice = 100;
             this.sugarAmount = sugarAmount;
+
         }
 
-        internal void CreateSweets(object CANDY)
+        public void CreateSweets(object CANDY)
         {
-            throw new NotImplementedException();
+            incomeMoney = incomeMoney - candy.price;
+            sugarAmount = sugarAmount - candy.sugarCommodity;
+            candies.Add();
         }
 
         internal void PrintInfo()
