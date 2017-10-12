@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MostCommon
 {
@@ -24,27 +21,27 @@ namespace MostCommon
 
         public void CountCommonWords()
         {         
-            Dictionary<string, int> dic = new Dictionary<string, int>();
+            Dictionary<string, int> article = new Dictionary<string, int>();
 
             string[] words = text.Split(' ');
 
             foreach (string word in words)
             {
-                if (dic.ContainsKey(word))
+                if (article.ContainsKey(word))
                 {
-                    dic[word]++;
+                    article[word]++;
                 }
                 else
                 {
-                    dic[word] = 1;
+                    article[word] = 1;
                 }         
             }
 
-            foreach (KeyValuePair<string, int> szavak in dic)
+            foreach (KeyValuePair<string, int> vocable in article)
             {
-                if (szavak.Value > 1)
+                if (vocable.Value > 1)
                 {
-                    Console.WriteLine("\"" + szavak.Key + "\"" + " " + szavak.Value);
+                    Console.WriteLine("\"" + vocable.Key + "\"" + " " + vocable.Value);
                 }
             }
         }
