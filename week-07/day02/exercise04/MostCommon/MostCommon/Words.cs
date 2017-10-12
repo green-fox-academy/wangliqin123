@@ -10,11 +10,11 @@ namespace MostCommon
     class Words
     {
         private string path = @"./article.txt";
-        private string[] text;
+        private string text;
 
         public Words()
         {
-            text = File.ReadAllLines(path);
+            text = File.ReadAllText(path);
         }
 
         public void Usage()
@@ -23,17 +23,30 @@ namespace MostCommon
         }
 
         public void CountCommonWords()
-        {           
+        {         
             Dictionary<string, int> dic = new Dictionary<string, int>();
 
-            foreach (string word in text)
+            string[] words = text.Split(' ');
+
+            foreach (string word in words)
             {
-                if (dic.Keys.Contains(word))
-                    dic[word] = dic[word]++;
+                if (dic.ContainsKey(word))
+                {
+                    dic[word]++;
+                }
                 else
-                    dic.Add(word, 1);
+                {
+                    dic[word] = 1;
+                }         
             }
-            Console.WriteLine(dic.Max());
+
+            foreach (KeyValuePair<string, int> szavak in dic)
+            {
+                if (szavak.Value > 1)
+                {
+                    Console.WriteLine("\"" + szavak.Key + "\"" + " " + szavak.Value);
+                }
+            }
         }
     }
 }
