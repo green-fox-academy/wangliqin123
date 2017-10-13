@@ -12,6 +12,7 @@ namespace TakeMeToThe
         {
             this.price = 10;
             this.sugarCommodity = 5;
+            this.type = "Lollipop";
         }
     }
 }

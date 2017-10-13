@@ -6,13 +6,51 @@ using System.Threading.Tasks;
 
 namespace TakeMeToThe
 {
-    public class Sweets : CandyShop
+    public class Sweets
     {
-        public int price;
-        public int sugarCommodity;
+        protected int price;
+        protected int sugarCommodity;
+        protected string type;
 
-        //public Sweets(int sugarAmount) : base(sugarAmount)
-        //{
-        //}
+        public int Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                price = value;
+            }
+        }
+
+        public int SugarCommodity
+        {
+            get
+            {
+                return sugarCommodity;
+            }
+            set
+            {
+                sugarCommodity = value;
+            }
+        }
+
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+            }
+        }
+
+        public void RaisePrice(int percentage)
+        {
+            price = price * percentage;
+        }
     }
 }

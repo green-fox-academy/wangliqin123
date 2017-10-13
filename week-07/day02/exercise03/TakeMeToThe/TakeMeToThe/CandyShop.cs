@@ -8,49 +8,82 @@ namespace TakeMeToThe
 {
     public class CandyShop
     {
-        protected readonly object CANDY;
-        internal static readonly object LOLLIPOP;
-        protected double incomeMoney;
-        protected int sugarAmount;
-        protected int sugarPrice;
-        Sweets sweets = new Sweets();
-        Candy candy = new Candy();
+        private double incomeMoney;
+        private int sugarAmount;
+        private int sugarPrice;
+        private int candy;
+        private int lollipop;
 
-        List<object> candies = new List<object>();
+        private List<Sweets> sweets = new List<Sweets>();
 
         public CandyShop(int sugarAmount)
         {
             this.sugarPrice = 100;
             this.sugarAmount = sugarAmount;
-
         }
 
-        public void CreateSweets(object CANDY)
+        public void CreateSweets(string type)
         {
-            incomeMoney = incomeMoney - candy.price;
-            sugarAmount = sugarAmount - candy.sugarCommodity;
-            candies.Add();
+            if (type == "Lollipop")
+            {
+                Sweets newLollipop = new Lollipop();
+                lollipop++;
+                sugarAmount -= newLollipop.SugarCommodity;
+            }
+            if (type == "Candy")
+            {
+                Sweets newCandy = new Lollipop();
+                candy++;
+                sugarAmount -= newCandy.SugarCommodity;
+            }
         }
 
-        internal void PrintInfo()
+        public void PrintInfo()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Inventory: {0} candies, {1} lollipops, Income: {2}$, Sugar: {3}gr",
+                             lollipop, candy, incomeMoney, sugarAmount);
         }
 
-        internal void Sell(object cANDY, int v)
+        public void Sell(string type, int value)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Raise(int percentage)
-        {
-            sweets.price = sweets.price * percentage;
+            if (type == "Lollipop")
+            {
+                for (int i = 0; i < sweets.Count; i++)
+                {
+                    if (sweets[i].Type == "Lollipop")
+                    {
+                        lollipop -= value;
+                        incomeMoney += sweets[i].Price;
+                        sweets.RemoveAt(i);
+                    }
+                }
+            }
+            else if (type == "Candy")
+            {
+                for (int i = 0; i < sweets.Count; i++)
+                {
+                    if (sweets[i].Type == "Candy")
+                    {
+                        candy -= value;
+                        incomeMoney += sweets[i].Price;
+                        sweets.RemoveAt(i);
+                    }
+                }
+            }
         }
 
         public void BuySugar(int boughtSugarAmount)
         {
             incomeMoney -= sugarPrice / 1000 * boughtSugarAmount;
             sugarAmount += boughtSugarAmount;            
+        }
+
+        public void Raise(int percentage)
+        {
+            foreach (Sweets sweet in sweets)
+            {
+                sweet.RaisePrice(percentage);
+            }
         }
     }
 }
