@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AircraftCarrier
 {
-    class F35 : Aircraft
+    public class F35 : Aircraft
     {
         public F35()
         {

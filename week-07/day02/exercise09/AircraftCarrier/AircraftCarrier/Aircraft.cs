@@ -21,13 +21,32 @@ namespace AircraftCarrier
 
         public int Fight()
         {
-            ammoStore -= ammoStore;
-            return damage = baseDamage * ammoStore;
+            int damage = baseDamage * ammoStore;
+            ammoStore = 0;
+            return damage;
         }
 
-        public int Refill(int number)
+        public int Refill(int fillAmmo)
         {
+            if (ammoStore + fillAmmo > maxAmmo)
+            {
+                ammoStore = maxAmmo;
+                return fillAmmo - maxAmmo;
+            }
+            ammoStore += fillAmmo;
+            return 0;
+        }
 
+        public void GetStatus(string type)
+        {
+            if (type == "F35")
+            {
+                Console.WriteLine("Type F35, Ammo: {0}, Base Damage: {1}, All Damage: {2}", ammoStore, baseDamage, Fight());
+            }
+            else if (type == "F16")
+            {
+                Console.WriteLine("Type F16, Ammo: {0}, Base Damage: {1}, All Damage: {2}", ammoStore, baseDamage, Fight());
+            }
         }
     }  
 }

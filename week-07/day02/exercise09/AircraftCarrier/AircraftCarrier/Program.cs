@@ -10,6 +10,12 @@ namespace AircraftCarrier
     {
         static void Main(string[] args)
         {
+            Aircraft aircraft = new Aircraft();
+
+            aircraft.Refill(100);          
+            aircraft.Fight();
+            aircraft.GetStatus("F16");
+            Console.ReadLine();
         }
     }
 }
