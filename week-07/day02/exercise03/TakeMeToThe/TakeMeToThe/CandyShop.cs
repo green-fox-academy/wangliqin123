@@ -26,15 +26,15 @@ namespace TakeMeToThe
         {
             if (type == "Lollipop")
             {
-                Sweets newLollipop = new Lollipop();
+                Sweets Lollipop = new Lollipop();
                 lollipop++;
-                sugarAmount -= newLollipop.SugarCommodity;
+                sugarAmount -= Lollipop.SugarCommodity;
             }
             if (type == "Candy")
             {
-                Sweets newCandy = new Lollipop();
+                Sweets Candy = new Lollipop();
                 candy++;
-                sugarAmount -= newCandy.SugarCommodity;
+                sugarAmount -= Candy.SugarCommodity;
             }
         }
 
@@ -50,7 +50,7 @@ namespace TakeMeToThe
             {
                 for (int i = 0; i < sweets.Count; i++)
                 {
-                    if (sweets[i].Type == "Lollipop")
+                    if (sweets[i].GetTypeOfSweet() == "Lollipop")
                     {
                         lollipop -= value;
                         incomeMoney += sweets[i].Price;
@@ -62,13 +62,13 @@ namespace TakeMeToThe
             {
                 for (int i = 0; i < sweets.Count; i++)
                 {
-                    if (sweets[i].Type == "Candy")
+                    if (sweets[i].GetTypeOfSweet() == "Candy")
                     {
                         candy -= value;
                         incomeMoney += sweets[i].Price;
                         sweets.RemoveAt(i);
                     }
-                }
+                }             
             }
         }
 

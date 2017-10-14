@@ -36,16 +36,9 @@ namespace TakeMeToThe
             }
         }
 
-        public string Type
+        public string GetTypeOfSweet()
         {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                type = value;
-            }
+            return type;
         }
 
         public void RaisePrice(int percentage)
