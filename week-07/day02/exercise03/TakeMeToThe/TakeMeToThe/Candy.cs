@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TakeMeToThe
+﻿namespace TakeMeToThe
 {
     public class Candy : Sweets
     {
@@ -12,7 +6,6 @@ namespace TakeMeToThe
         {
             this.price = 20;
             this.sugarCommodity = 10;
-            this.type = "Candy";
         }
     }
 }

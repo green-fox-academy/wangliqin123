@@ -1,89 +1,87 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TakeMeToThe
 {
     public class CandyShop
     {
         private double incomeMoney;
-        private int sugarAmount;
-        private int sugarPrice;
-        private int candy;
-        private int lollipop;
-
-        private List<Sweets> sweets = new List<Sweets>();
+        public int sugarAmount;
+        public int sugarPrice;
+        public int candies;
+        public int lollipops;
+        public List<Sweets> inventory = new List<Sweets>();
 
         public CandyShop(int sugarAmount)
         {
             this.sugarPrice = 100;
-            this.sugarAmount = sugarAmount;
+            this.sugarAmount = sugarAmount;    
         }
 
         public void CreateSweets(string type)
         {
             if (type == "Lollipop")
             {
-                Sweets Lollipop = new Lollipop();
-                lollipop++;
-                sugarAmount -= Lollipop.SugarCommodity;
+                Lollipop lollipop = new Lollipop();
+                inventory.Add(lollipop);
+                sugarAmount -= lollipop.sugarCommodity;
+                lollipops++;
             }
             if (type == "Candy")
             {
-                Sweets Candy = new Lollipop();
-                candy++;
-                sugarAmount -= Candy.SugarCommodity;
+                Candy candy = new Candy();
+                inventory.Add(candy);
+                sugarAmount -= candy.sugarCommodity;
+                candies++;
             }
         }
 
         public void PrintInfo()
         {
             Console.WriteLine("Inventory: {0} candies, {1} lollipops, Income: {2}$, Sugar: {3}gr",
-                             lollipop, candy, incomeMoney, sugarAmount);
+                              candies, lollipops, incomeMoney, sugarAmount);
         }
 
         public void Sell(string type, int value)
         {
             if (type == "Lollipop")
             {
-                for (int i = 0; i < sweets.Count; i++)
+                for (int i = 0; i < inventory.Count; i++)
                 {
-                    if (sweets[i].GetTypeOfSweet() == "Lollipop")
+                    if (inventory[i].GetType().Name == "Lollipop")
                     {
-                        lollipop -= value;
-                        incomeMoney += sweets[i].Price;
-                        sweets.RemoveAt(i);
+                        inventory.Remove(inventory[i]);
+                        incomeMoney += inventory[i].price;
+                        lollipops -= value;
                     }
                 }
             }
             else if (type == "Candy")
             {
-                for (int i = 0; i < sweets.Count; i++)
+                for (int i = 0; i < inventory.Count; i++)
                 {
-                    if (sweets[i].GetTypeOfSweet() == "Candy")
+                    if (inventory[i].GetType().Name == "Candy")
                     {
-                        candy -= value;
-                        incomeMoney += sweets[i].Price;
-                        sweets.RemoveAt(i);
+                        inventory.Remove(inventory[i]);
+                        incomeMoney += inventory[i].price;
+                        candies -= value;
                     }
                 }             
             }
         }
 
-        public void BuySugar(int boughtSugarAmount)
+        public void Raise(double percentage)
         {
-            incomeMoney -= sugarPrice / 1000 * boughtSugarAmount;
-            sugarAmount += boughtSugarAmount;            
+            foreach (Sweets sweet in inventory)
+            {
+                sweet.price = sweet.price * (1 + (percentage / 100));
+            }
         }
 
-        public void Raise(int percentage)
+        public void BuySugar(int sugarToBuyAmount)
         {
-            foreach (Sweets sweet in sweets)
-            {
-                sweet.RaisePrice(percentage);
-            }
+            sugarAmount += sugarToBuyAmount;
+            incomeMoney -= sugarToBuyAmount * 0.1;               
         }
     }
 }
