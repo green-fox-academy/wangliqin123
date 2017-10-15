@@ -1,4 +1,6 @@
-﻿namespace MostCommon
+﻿using System;
+
+namespace MostCommon
 {
     class MostCommonWord
     {
@@ -14,6 +16,7 @@
             {
                 words.CountCommonWords();
             }
+            Console.ReadLine();
         }
     }
 }
