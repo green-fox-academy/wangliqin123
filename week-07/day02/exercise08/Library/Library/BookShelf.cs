@@ -8,6 +8,7 @@ namespace Library
 {
     class BookShelf
     {
+        public List<Book> books = new List<Book>();
         internal void toString()
         {
             throw new NotImplementedException();

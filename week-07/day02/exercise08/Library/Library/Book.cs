@@ -14,10 +14,9 @@ namespace Library
 
         public Book()
         {
-            this.author = author;
-            this.title = title;
-            this.releaseYear = releaseYear;
-
+            this.author = "Douglas Adams";
+            this.title = "The Hitchhiker's Guide to the Galaxy";
+            this.releaseYear = 1979;
         }
     }
 }
