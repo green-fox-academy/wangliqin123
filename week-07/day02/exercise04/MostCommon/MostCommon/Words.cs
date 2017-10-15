@@ -8,6 +8,8 @@ namespace MostCommon
     {
         private string path = @"./article.txt";
         private string text;
+        private string mostCommonWord = String.Empty;
+        private int maxPresence = 1;
 
         public Words()
         {
@@ -39,9 +41,11 @@ namespace MostCommon
 
             foreach (KeyValuePair<string, int> vocable in article)
             {
-                if (vocable.Value > 1)
+                if (vocable.Value > maxPresence)
                 {
-                    Console.WriteLine("\"" + vocable.Key + "\"" + " " + vocable.Value);
+                    mostCommonWord = vocable.Key;
+                    maxPresence = vocable.Value;
+                    Console.WriteLine("\"" + mostCommonWord + "\"" + " " + maxPresence);
                 }
             }
         }

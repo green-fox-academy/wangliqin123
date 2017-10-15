@@ -16,7 +16,6 @@ namespace MostCommon
             {
                 words.CountCommonWords();
             }
-            Console.ReadLine();
         }
     }
 }
