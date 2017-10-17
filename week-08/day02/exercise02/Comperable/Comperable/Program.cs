@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Comperable
 {
@@ -22,9 +18,9 @@ namespace Comperable
 
             dominoes.Sort();
 
-            foreach (var domino in dominoes)
+            foreach (Domino domino in dominoes)
             {
-                Console.WriteLine(dominoes);
+                Console.WriteLine(domino);
             }
             
             Console.ReadLine();

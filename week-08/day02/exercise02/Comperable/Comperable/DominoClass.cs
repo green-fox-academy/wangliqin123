@@ -13,8 +13,13 @@ namespace Comperable
 
         public int CompareTo(object obj)
         {
-            Domino domino = obj as Domino;
-            return domino.GetValues()[1].CompareTo(domino.GetValues()[0]);
+            Domino otherDomino = obj as Domino;
+            return Values[0].CompareTo(otherDomino.Values[0]);
+        }
+
+        public override string ToString()
+        {
+            return Values[0].ToString() + "," + Values[1];
         }
 
         public int[] GetValues()
