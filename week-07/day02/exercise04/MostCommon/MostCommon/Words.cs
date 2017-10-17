@@ -44,6 +44,14 @@ namespace MostCommon
                     Console.WriteLine("\"" + vocable.Key + "\"" + " " + vocable.Value);
                 }
             }
+
+            foreach (KeyValuePair<string, int> vocable in article)
+            {
+                if (vocable.Value > 2)
+                {
+                    Console.WriteLine("\"" + vocable.Key + "\"" + " " + vocable.Value);
+                }
+            }
         }
     }
 }
