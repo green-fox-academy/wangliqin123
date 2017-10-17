@@ -21,6 +21,7 @@ namespace Comperable
             dominoes.Add(new Domino(7, 1));
 
             dominoes.Sort();
+
             foreach (var domino in dominoes)
             {
                 Console.WriteLine(dominoes);
