@@ -9,6 +9,7 @@ namespace TwentyPlusOne
     class Deck
     {
         public List<Card> cards = new List<Card>();
+        private static Random random = new Random();
 
         public void CardCreator()
         {
@@ -19,40 +20,38 @@ namespace TwentyPlusOne
                     for (var k = 0; k < 13; k++)
                     {
                         cards.Add(new Card((CardColor)i, (CardSuit)j, (CardRank)k));
-                    }
-                    
+                    }                   
                 }
             }
         }
-
-        public List<Card> newCards = new List<Card>();
         
         public void ShuffleDeck()
         {
-            Random random = new Random();
-
-            foreach (Card card in cards)
-            {
-                newCards.Insert(random.Next(0, newCards.Count + 1), card);
-            }
+            cards = cards.OrderBy(x => random.Next()).ToList();
         }
 
-        public void PullFirst()
+        public void GetScore()
         {
-            var firstCard = newCards.FirstOrDefault();
+            Console.WriteLine(PullFirst().Score);
+        }
+
+        public Card PullFirst()
+        {
+            var firstCard = cards.FirstOrDefault();
             Console.WriteLine(firstCard);
+            return firstCard;
         }
 
         public void PullLast()
         {
-            var lastCard = newCards.LastOrDefault();
+            var lastCard = cards.LastOrDefault();
             Console.WriteLine(lastCard);
         }
 
         public void PullRandom()
         {
             Random random = new Random();
-            var randomCard = newCards[random.Next(newCards.Count)];
+            var randomCard = cards[random.Next(cards.Count)];
             Console.WriteLine(randomCard);         
         }
     }

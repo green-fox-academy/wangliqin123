@@ -20,7 +20,7 @@ namespace TwentyPlusOne
             Console.WriteLine();
             deck.ShuffleDeck();
 
-            foreach (Card card in deck.newCards)
+            foreach (Card card in deck.cards)
             {
                 Console.WriteLine(card);
             }
@@ -30,6 +30,9 @@ namespace TwentyPlusOne
             deck.PullLast();
             Console.WriteLine();
             deck.PullRandom();
+            Console.WriteLine();
+            deck.GetScore();
+
 
             Console.ReadLine();
         }

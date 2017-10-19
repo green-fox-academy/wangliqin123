@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace TwentyPlusOne
 {
-    class Card
+    class Card : Deck
     {
         public CardColor Color;
         public CardSuit Suit;
         public CardRank Rank;
+        public int score;
 
         public Card(CardColor color, CardSuit suit, CardRank rank)
         {
@@ -21,6 +22,41 @@ namespace TwentyPlusOne
         public override string ToString()
         {
             return string.Format("{0} {1} {2}", Color, Suit, Rank);
+        }
+
+        public bool IsPictureCard
+        {
+            get
+            {
+                return Rank >= CardRank.J && Rank <= CardRank.K;
+            }
+            set
+            {
+                IsPictureCard = value;
+            }
+        }
+
+        public int Score
+        {
+            get
+            {
+                if (IsPictureCard)
+                {
+                    return 10;
+                }
+                else if (Rank == CardRank.A)
+                {
+                    return 11;
+                }
+                else
+                {
+                    return (int)Rank + 2;
+                }
+            }
+            set
+            {
+                score = value;
+            }
         }
     }
 
