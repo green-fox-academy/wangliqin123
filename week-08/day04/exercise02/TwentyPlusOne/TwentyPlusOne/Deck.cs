@@ -24,6 +24,7 @@ namespace TwentyPlusOne
                 }
             }
         }
+
         public List<Card> newCards = new List<Card>();
         
         public void ShuffleDeck()
@@ -34,6 +35,25 @@ namespace TwentyPlusOne
             {
                 newCards.Insert(random.Next(0, newCards.Count + 1), card);
             }
+        }
+
+        public void PullFirst()
+        {
+            var firstCard = newCards.FirstOrDefault();
+            Console.WriteLine(firstCard);
+        }
+
+        public void PullLast()
+        {
+            var lastCard = newCards.LastOrDefault();
+            Console.WriteLine(lastCard);
+        }
+
+        public void PullRandom()
+        {
+            Random random = new Random();
+            var randomCard = newCards[random.Next(newCards.Count)];
+            Console.WriteLine(randomCard);         
         }
     }
 }

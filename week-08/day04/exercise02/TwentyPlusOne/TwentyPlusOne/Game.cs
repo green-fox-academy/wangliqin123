@@ -17,13 +17,19 @@ namespace TwentyPlusOne
             {
                 Console.WriteLine(card);
             }
-
+            Console.WriteLine();
             deck.ShuffleDeck();
 
             foreach (Card card in deck.newCards)
             {
                 Console.WriteLine(card);
             }
+            Console.WriteLine();
+            deck.PullFirst();
+            Console.WriteLine();
+            deck.PullLast();
+            Console.WriteLine();
+            deck.PullRandom();
 
             Console.ReadLine();
         }
