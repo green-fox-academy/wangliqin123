@@ -8,10 +8,10 @@ namespace TwentyPlusOne
 {
     class Deck
     {
-        public List<Card> cards = new List<Card>();
+        public static List<Card> cards = new List<Card>();
         private static Random random = new Random();
 
-        public void CardCreator()
+        public static void CardCreator()
         {
             for (var i = 0; i < 2; i++)
             {
@@ -20,39 +20,50 @@ namespace TwentyPlusOne
                     for (var k = 0; k < 13; k++)
                     {
                         cards.Add(new Card((CardColor)i, (CardSuit)j, (CardRank)k));
-                    }                   
+
+                        if (k <= 8)
+                        {
+                            cards[cards.Count - 1].Value = k + 2;
+                        }
+                        else if (k == 12)
+                        {
+                            cards[cards.Count - 1].Value = 11;
+                        }
+                        else
+                        {
+                            cards[cards.Count - 1].Value = 10;
+                        }
+                    }
                 }
             }
         }
         
-        public void ShuffleDeck()
+        public static void ShuffleDeck()
         {
             cards = cards.OrderBy(x => random.Next()).ToList();
         }
 
-        public void GetScore()
+        public static int GetValue(Card input)
         {
-            Console.WriteLine(PullFirst().Score);
+            return input.Value;
         }
 
-        public Card PullFirst()
+        public static Card PullFirst()
         {
             var firstCard = cards.FirstOrDefault();
-            Console.WriteLine(firstCard);
             return firstCard;
         }
 
-        public void PullLast()
+        public static  Card PullLast()
         {
             var lastCard = cards.LastOrDefault();
-            Console.WriteLine(lastCard);
+            return lastCard;
         }
 
-        public void PullRandom()
+        public static Card PullRandom()
         {
-            Random random = new Random();
             var randomCard = cards[random.Next(cards.Count)];
-            Console.WriteLine(randomCard);         
+            return randomCard;
         }
     }
 }
