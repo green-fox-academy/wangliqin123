@@ -19,4 +19,4 @@ namespace OddAverage
             Console.ReadLine();
         }
     }
-}
+}   
