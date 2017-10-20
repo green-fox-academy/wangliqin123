@@ -8,30 +8,28 @@ namespace TwentyPlusOne
 {
     class Game
     {
-        Random random = new Random();
         Deck deck = new Deck();
-        static int myScore;
-        static int opponentScore;
-        static Card firstCard = Deck.PullRandom();
-        static Card secondCard = Deck.PullRandom();
 
-        public int OpponentScore()
+        static Card myFirstCard = Deck.PullFirst();
+        static Card mySecondCard = Deck.PullRandom();
+
+        public static int OpponentScore()
         {
-            return random.Next(15, 21);
+            int opponentScore = Deck.random.Next(15, 21);
+            return opponentScore;
         }
 
         public static int GetMyScore()
         {
-            return firstCard.Value;
+            int myscore = myFirstCard.Value;
+            return myscore;
         }
 
-        public static void Play()
+        public static int GetMyNewScore()
         {
-
-            Deck.CardCreator();
-            Deck.ShuffleDeck();
-
-            
+            int mySecondScore = mySecondCard.Value;
+            mySecondScore += GetMyScore();
+            return mySecondScore;
         }
     }
 }

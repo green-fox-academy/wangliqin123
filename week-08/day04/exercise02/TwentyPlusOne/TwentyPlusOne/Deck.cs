@@ -8,16 +8,16 @@ namespace TwentyPlusOne
 {
     class Deck
     {
-        public static List<Card> cards = new List<Card>();
-        private static Random random = new Random();
+        public static Random random = new Random();
+        public static List<Card> cards = new List<Card>();     
 
         public static void CardCreator()
         {
-            for (var i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++)
             {
-                for (var j = 0; j < 4; j++)
+                for (int j = 0; j < 4; j++)
                 {
-                    for (var k = 0; k < 13; k++)
+                    for (int k = 0; k < 13; k++)
                     {
                         cards.Add(new Card((CardColor)i, (CardSuit)j, (CardRank)k));
 
@@ -50,19 +50,19 @@ namespace TwentyPlusOne
 
         public static Card PullFirst()
         {
-            var firstCard = cards.FirstOrDefault();
+            Card firstCard = cards.FirstOrDefault();
             return firstCard;
         }
 
-        public static  Card PullLast()
+        public static Card PullLast()
         {
-            var lastCard = cards.LastOrDefault();
+            Card lastCard = cards.LastOrDefault();
             return lastCard;
         }
 
         public static Card PullRandom()
         {
-            var randomCard = cards[random.Next(cards.Count)];
+            Card randomCard = cards[random.Next(cards.Count)];
             return randomCard;
         }
     }

@@ -12,23 +12,6 @@ namespace TwentyPlusOne
         public CardSuit Suit;
         public CardRank Rank;
         public int Value;
-        //{
-        //    get
-        //    {
-        //        if (Rank >= CardRank.J && Rank <= CardRank.K)
-        //        {
-        //            return 10;
-        //        }
-        //        else if (Rank == CardRank.A)
-        //        {
-        //            return 11;
-        //        }
-        //        else
-        //        {
-        //            return (int)Rank + 2;
-        //        }
-        //    }
-        //}
 
         public Card(CardColor color, CardSuit suit, CardRank rank)
         {
