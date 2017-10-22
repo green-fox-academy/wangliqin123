@@ -24,7 +24,7 @@ namespace Clobeable
         public void Introduce()
         {
             Console.WriteLine("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " +
-                             previousOrganization + " who skipped " + " days from the course already.");
+                             previousOrganization + ".");
         }
 
         public object Clone()
