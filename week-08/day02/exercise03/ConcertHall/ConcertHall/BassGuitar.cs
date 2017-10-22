@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Music
 {
@@ -17,7 +13,9 @@ namespace Music
 
         public BassGuitar(int numberOfStrings)
         {
-            this.numberOfStrings = 4;
+            this.numberOfStrings = numberOfStrings;
+            Console.Write("Bass guitar is a {0}-stringed instrument that ", numberOfStrings);
+            Sound();
         }
 
         public override void Sound()

@@ -17,7 +17,7 @@ namespace ConcertHall
             bassGuitar.Play();
             violin.Play();
 
-            Console.WriteLine("Test 2, create Electric Guitar, Bass Guitar with 7 and 5 strings .");
+            Console.WriteLine("Test 2, create Electric Guitar, Bass Guitar with 7 and 5 strings.");
             ElectricGuitar guitar2 = new ElectricGuitar(7);
             BassGuitar bassGuitar2 = new BassGuitar(5);
 
