@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Clobeable
 {
@@ -23,8 +19,7 @@ namespace Clobeable
 
         public void Introduce()
         {
-            Console.WriteLine("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " +
-                             previousOrganization + ".");
+            Console.WriteLine("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " + previousOrganization + ".");
         }
 
         public object Clone()
