@@ -1,29 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BabiesInTheZoo
 {
     class Mammal : Animal
     {
-        private string integument;
-        private string feedOfOffsprings;
+        private string integument = "hair";
+        private string feedOfOffsprings = "breast";
 
         public Mammal(string name)
         {
             this.name = name;
+            this.babyFrom = "want a child from my uterus!";
+            this.age = 10;
         }
 
-        public override void Feed()
+        public override void BabyInfo()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("My baby has {0} and I feed him from my {1}.", integument, feedOfOffsprings);
         }
 
         public override void Greet()
         {
-            Console.WriteLine("Hello, I am a mammal");
+            Console.WriteLine("Hello, I am {0} {1} years old {2}.", gender, age, name);
         }
 
         public override string GetName()
@@ -33,7 +31,7 @@ namespace BabiesInTheZoo
 
         public override string WantChild()
         {
-            return "want a child from my uterus!";
+            return babyFrom;
         }
     }
 }
