@@ -51,18 +51,21 @@ namespace TwentyPlusOne
         public static Card PullFirst()
         {
             Card firstCard = cards.FirstOrDefault();
+            //cards.RemoveAt(0);
             return firstCard;
         }
 
         public static Card PullLast()
         {
             Card lastCard = cards.LastOrDefault();
+            //cards.RemoveAt(cards.Count - 1);
             return lastCard;
         }
 
         public static Card PullRandom()
         {
             Card randomCard = cards[random.Next(cards.Count)];
+            //cards.Remove(randomCard);
             return randomCard;
         }
     }

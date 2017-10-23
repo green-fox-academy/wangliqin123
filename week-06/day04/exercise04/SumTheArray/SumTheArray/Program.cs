@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SumTheArray
 {
@@ -11,14 +7,18 @@ namespace SumTheArray
         static void Main(string[] args)
         {
             SumArray(new int[] { 1, 2, 3, 4 });
-            SumArray(args);
 
             Console.ReadLine();
         }
 
         public static void SumArray<T>(T[] array)
         {
-            array.Sum();
+            dynamic sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            Console.WriteLine(sum);
         }
     }
 }

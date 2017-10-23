@@ -28,7 +28,6 @@ namespace TwentyPlusOne
         public static int GetMyNewScore()
         {
             int mySecondScore = mySecondCard.Value;
-            mySecondScore += GetMyScore();
             return mySecondScore;
         }
     }
