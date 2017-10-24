@@ -9,11 +9,13 @@ namespace FirstApplication.Controllers
         {
             return View();
         }
+
+        static int counter = 0;
+
         [Route("greeting")]
         public IActionResult Greeting(string name)
         {
-            name = "Lorand";
-            return new JsonResult(new { id = 1, content = name });
+            return new JsonResult(new { id = ++counter, content = $"Hello, {name} !"});
         }
     }
 }
