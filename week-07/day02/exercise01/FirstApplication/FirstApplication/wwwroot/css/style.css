@@ -1,29 +1,27 @@
-﻿p {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
+﻿body {
+    background-color: #fff;
     -webkit-animation: random 5s infinite;
-    animation: random 1s infinite;
+    animation: random 2s infinite;
 }
 
 @keyframes random {
     15% {
-        color: red;
+        background-color: red;
     }
 
     30% {
-        color: yellow;
+        background-color: yellow;
     }
 
     45% {
-        color: green;
+        background-color: green;
     }
 
     60% {
-        color: blue;
+        background-color: blue;
     }
 
     75% {
-        color: white;
+        background-color: white;
     }
 }

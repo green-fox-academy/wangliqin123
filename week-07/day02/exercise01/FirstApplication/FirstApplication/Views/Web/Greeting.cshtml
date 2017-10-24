@@ -11,8 +11,12 @@
     <p>
         @*Hello, @Model.Content! (This site was loaded @Model.Id times since last server start.)*@
         @foreach (var hello in Model.hellos)
-        {         
-                @hello;<br>               
+        {
+        <span style="color:rgb(@Model.random.Next(255), @Model.random.Next(255), @Model.random.Next(255));
+              font-size: @Model.random.Next(10,50)px">
+            
+                @hello;<br>   
+        </span>
         }
     </p>
 </body>
