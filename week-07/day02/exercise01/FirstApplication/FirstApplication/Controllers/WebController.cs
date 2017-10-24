@@ -19,6 +19,7 @@ namespace FirstApplication.Controllers
             {
                 Id = ++counter,
                 Content = name,
+
             };
 
             return View(greeting);
