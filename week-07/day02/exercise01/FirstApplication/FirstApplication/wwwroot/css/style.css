@@ -1,0 +1,29 @@
+﻿p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    -webkit-animation: random 5s infinite;
+    animation: random 1s infinite;
+}
+
+@keyframes random {
+    15% {
+        color: red;
+    }
+
+    30% {
+        color: yellow;
+    }
+
+    45% {
+        color: green;
+    }
+
+    60% {
+        color: blue;
+    }
+
+    75% {
+        color: white;
+    }
+}
