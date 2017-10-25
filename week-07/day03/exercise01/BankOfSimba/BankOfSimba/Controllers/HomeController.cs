@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using BankOfSimba.ViewModels.Home;
-using BankOfSimba.Models;
 
 namespace BankOfSimba.Controllers
 {
-
     public class HomeController : Controller
     {
         [Route("Account")]
@@ -22,7 +16,6 @@ namespace BankOfSimba.Controllers
             homeViewModel.accounts.Add(homeViewModel.bankAccount5);
 
             return View(homeViewModel);
-
         }
     }
 }

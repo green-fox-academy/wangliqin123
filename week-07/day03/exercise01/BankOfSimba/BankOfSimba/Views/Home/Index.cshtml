@@ -12,7 +12,7 @@
                     <td>@(++index)</td>
                     <td>@account.Name</td>
                     <td>@account.AnimalType</td>
-                    <td>@account.Balance.ToString("0.00") @account.MoneyType</td>
+                    <td>@account.Balance.ToString("0.00") @account.Currency</td>
                     <td>@((@account.IsGood) ? "Good" : "Bad")</td>
                 </tr>            
             }
