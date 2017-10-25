@@ -10,10 +10,6 @@ namespace BankOfSimba.Models
         public string Name { get; set; } = "Simba";
         public double Balance { get; set; } = 2000;
         public string AnimalType { get; set; } = "Lion";
+        public string MoneyType { get; set; } = "Zebra";
     }
-
-    //public enum AnimalType
-    //{
-    //    Lion
-    //}
 }
