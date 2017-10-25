@@ -4,10 +4,15 @@
     <title></title>
 </head>
 <body>
-    <div>
-        <p>@Model.BankAccount.Name</p>
-        <p>@Model.BankAccount.Balance@String.Format(".00") @Model.BankAccount.MoneyType</p>
-        <p>@Model.BankAccount.AnimalType</p>
-    </div>
+    <table>
+        @foreach (var account in Model.accounts)
+        {
+            <tr>
+                <td>@account.Name</td>
+                <td>@account.Balance</td>
+                <td>@account.AnimalType</td>
+            </tr>            
+        }
+    </table>
 </body>
 </html>

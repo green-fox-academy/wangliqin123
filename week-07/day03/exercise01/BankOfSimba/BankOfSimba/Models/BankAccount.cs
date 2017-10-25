@@ -7,9 +7,22 @@ namespace BankOfSimba.Models
 {
     public class BankAccount
     {
-        public string Name { get; set; } = "Simba";
-        public double Balance { get; set; } = 2000;
-        public string AnimalType { get; set; } = "Lion";
-        public string MoneyType { get; set; } = "Zebra";
+        public string Name { get; set; }
+        public double Balance { get; set; }
+        public string AnimalType { get; set; }
+        //public string MoneyType { get; set; } = "Zebra";
+
+        public BankAccount(string name, double balance, string animaltype)
+        {
+            Name = name;
+            Balance = balance;
+            AnimalType = animaltype;
+        }
+    }
+    
+
+    public enum AnimalType
+    {
+        Lion
     }
 }
