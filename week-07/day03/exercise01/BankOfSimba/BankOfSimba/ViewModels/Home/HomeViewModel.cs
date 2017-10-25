@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BankOfSimba.ViewModels
+namespace BankOfSimba.ViewModels.Home
 {
     public class HomeViewModel
     {
-        BankAccount bankAccount = new BankAccount();
+        public BankAccount BankAccount { get; set; } = new BankAccount();
     }
 }
