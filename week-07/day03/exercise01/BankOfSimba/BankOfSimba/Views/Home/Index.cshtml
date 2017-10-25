@@ -6,23 +6,25 @@
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/style.css")" />
 </head>
 <body>
-    <table cellpadding="10" border="1" style="text-align: center">
+    <table>
         <tr>
             <td>Index</td>
             <td>Name</td>
-            <td>AnimalType</td>
+            <td>Species</td>
             <td>Current Money</td>
-            <td>Good/Bad</td>
+            <td>Role</td>
+            <td>Raise</td>
         </tr>
-        @{ var index = 0; }
+        @{ int index = 0; }
             @foreach (var account in Model.accounts)
             {
-                <tr style="@((@account.IsKing) ? "color:red" : "color:orange") ">
+                <tr style="@((@account.IsKing) ? "color:gold" : "color:silver") ">
                     <td>@(++index)</td>
                     <td>@account.Name</td>
                     <td>@account.AnimalType</td>
                     <td>@account.Balance.ToString("0.00") @account.Currency</td>
-                    <td>@((@account.IsGood) ? "Good" : "Bad")</td>
+                    <td>@((@account.IsGood) ? "Good One" : "Bad Guy")</td>
+                    <td><button type="submit" value="Submit">Submit</button></td>
                 </tr>            
             }
     </table>

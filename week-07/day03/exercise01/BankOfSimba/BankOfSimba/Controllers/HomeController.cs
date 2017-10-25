@@ -5,7 +5,7 @@ namespace BankOfSimba.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("Account")]
+        [Route("AccountList")]
         public IActionResult Index()
         { 
             return View(new HomeViewModel());
