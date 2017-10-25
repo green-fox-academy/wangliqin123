@@ -1,14 +1,23 @@
 ﻿@model BankOfSimba.ViewModels.Home.HomeViewModel
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/style.css")" />
 </head>
 <body>
-    <table>
+    <table cellpadding="10" border="1" style="text-align: center">
+        <tr>
+            <td>Index</td>
+            <td>Name</td>
+            <td>AnimalType</td>
+            <td>Current Money</td>
+            <td>Good/Bad</td>
+        </tr>
         @{ var index = 0; }
             @foreach (var account in Model.accounts)
             {
-                <tr style="@((@account.IsKing) ? "color:red" : "color:black") ">
+                <tr style="@((@account.IsKing) ? "color:red" : "color:orange") ">
                     <td>@(++index)</td>
                     <td>@account.Name</td>
                     <td>@account.AnimalType</td>
