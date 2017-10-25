@@ -1,6 +1,7 @@
 ﻿body {
     background-color: #fff;
     -webkit-animation: random 5s infinite;
+    -moz-animation: random 5s infinite;
     animation: random 2s infinite;
 }
 
