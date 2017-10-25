@@ -18,14 +18,17 @@
         @{ int index = 0; }
             @foreach (var account in Model.accounts)
             {
-                <tr style="@((@account.IsKing) ? "color:gold" : "color:silver") ">
+                <tr style="@((@account.IsKing) ? "color:gold" : "color:crimson") ">
                     <td>@(++index)</td>
                     <td>@account.Name</td>
                     <td>@account.AnimalType</td>
                     <td>@account.Balance.ToString("0.00") @account.Currency</td>
                     <td>@((@account.IsGood) ? "Good One" : "Bad Guy")</td>
-                    <td><button type="submit" value="Submit">Submit</button></td>
-                </tr>            
+                    @using (Html.BeginForm("action", "home"))
+                    {
+                     <td><input type="submit" value="Submit" /></td>
+                    }
+                </tr>               
             }
     </table>
 </body>
