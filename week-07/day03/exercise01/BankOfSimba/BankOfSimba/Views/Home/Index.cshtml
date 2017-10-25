@@ -5,14 +5,16 @@
 </head>
 <body>
     <table>
-        @foreach (var account in Model.accounts)
-        {
-            <tr>
-                <td>@account.Name</td>
-                <td>@account.Balance</td>
-                <td>@account.AnimalType</td>
-            </tr>            
-        }
+        @{ var index = 0; }
+            @foreach (var account in Model.accounts)
+            {
+                <tr style="@((@account.IsKing) ? "color:red" : "color:black") ">
+                    <td>@(++index)</td>
+                    <td>@account.Name</td>
+                    <td>@account.AnimalType</td>
+                    <td>@account.Balance.ToString("0.00") @account.MoneyType</td>
+                </tr>            
+            }
     </table>
 </body>
 </html>
