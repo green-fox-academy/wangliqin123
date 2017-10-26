@@ -1,7 +1,13 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model CounterApp.Models.Counter
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
+    <p>@Model.Number</p>
+    @using (Html.BeginForm("action", "home"))
+    {
+        <p><input type="submit" value="Submit" /></p>
+    }
 </body>
 </html>

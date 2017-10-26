@@ -3,20 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using CounterApp.Models;
 
 namespace CounterApp.Controllers
 {
     public class HomeController : Controller
     {
+        Counter counter;
+
+        public HomeController(Counter counter)
+        {
+            this.counter = counter;
+        }
+
         [HttpGet]
+        [Route("index")]
         public IActionResult Index()
         {
-            return View();
+            return View(counter);
         }
 
         [HttpPost]
-        public ActionResult Increase()
+        [Route("index")]
+        public IActionResult Increase()
         {
+            counter.Raise();
             return RedirectToAction("Index");
         }
     }
