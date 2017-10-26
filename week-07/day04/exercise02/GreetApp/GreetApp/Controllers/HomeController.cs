@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using GreetApp.Models;
 
 namespace GreetApp.Controllers
 {
     public class HomeController : Controller
     {
+        Greet greet;
+
+        public HomeController(Greet greet)
+        {
+            this.greet = greet;
+        }
+
         [HttpGet]
         [Route("/")]
         public IActionResult Index()
@@ -17,16 +25,17 @@ namespace GreetApp.Controllers
 
         [HttpPost]
         [Route("/")]
-        public IActionResult Greeting()
+        public IActionResult Greets()
         {
-            return RedirectToAction("Index");
+            return RedirectToAction("greet");
         }
 
         [HttpGet]
-        [Route("/")]
+        [Route("greet")]
         public IActionResult GreetSomeone()
         {
-
+            greet.Greeting();
+            return View(greet);
         }
     }
 }
