@@ -22,8 +22,8 @@
     public enum AnimalType
     {
         Lion,
-        Monkey,
-        Snake,
-        Giraffe     
+        Meerkat,
+        Mandrill,
+        Hornbill    
     }
 }

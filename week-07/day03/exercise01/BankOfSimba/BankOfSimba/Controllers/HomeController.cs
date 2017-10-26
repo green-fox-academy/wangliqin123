@@ -11,6 +11,7 @@ namespace BankOfSimba.Controllers
         {
             this.homeViewModel = homeViewModel;
         }
+
         [HttpGet]
         [Route("AccountList")]
         public IActionResult Index()
