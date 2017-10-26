@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using GreetApp.Models;
 
 namespace GreetApp.Controllers
@@ -13,28 +9,28 @@ namespace GreetApp.Controllers
 
         public HomeController(Greet greet)
         {
-            this.greet = greet;
+            this.greet = greet;           
         }
 
         [HttpGet]
-        [Route("/")]
+        [Route("")]
         public IActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        [Route("/")]
-        public IActionResult Greets()
+        [Route("greet")]
+        public IActionResult Greets(string name)
         {
-            return RedirectToAction("greet");
+            greet.Name = name;
+            return RedirectToAction("IndexWithHi");
         }
 
         [HttpGet]
         [Route("greet")]
-        public IActionResult GreetSomeone()
+        public IActionResult IndexWithHi()
         {
-            greet.Greeting();
             return View(greet);
         }
     }
