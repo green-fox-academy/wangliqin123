@@ -22,8 +22,8 @@
     public enum AnimalType
     {
         Lion,
-        Meerkat,
+        Hornbill,
         Mandrill,
-        Hornbill    
+        Meerkat       
     }
 }
