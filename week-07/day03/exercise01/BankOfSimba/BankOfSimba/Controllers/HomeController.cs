@@ -14,6 +14,7 @@ namespace BankOfSimba.Controllers
         }
 
         [HttpPost]
+        [Route("AccountList")]
         public ActionResult MyAction(string submit)
         {
             if (submit != null)
