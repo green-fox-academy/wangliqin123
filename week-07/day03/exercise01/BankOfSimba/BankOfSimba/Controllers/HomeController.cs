@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BankOfSimba.ViewModels.Home;
-using BankOfSimba.Models;
 
 namespace BankOfSimba.Controllers
 {
@@ -30,7 +29,7 @@ namespace BankOfSimba.Controllers
                         homeViewModel.accounts[i].Balance += 10;
                     }
                 }
-        }
+            }
             return View();
         }
     }
