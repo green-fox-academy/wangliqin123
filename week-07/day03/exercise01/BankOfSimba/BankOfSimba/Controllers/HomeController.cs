@@ -5,33 +5,25 @@ namespace BankOfSimba.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeViewModel homeViewModel = new HomeViewModel();
+        HomeViewModel homeViewModel;
 
+        public HomeController(HomeViewModel homeViewModel)
+        {
+            this.homeViewModel = homeViewModel;
+        }
+        [HttpGet]
         [Route("AccountList")]
         public IActionResult Index()
         {
-            return View(new HomeViewModel());
+            return View(homeViewModel);
         }
 
         [HttpPost]
         [Route("AccountList")]
-        public ActionResult MyAction(string submit)
+        public IActionResult MyAction()
         {
-            if (submit != null)
-            {
-                for (int i = 0; i < homeViewModel.accounts.Count; i++)
-                {
-                    if (homeViewModel.accounts[i].IsKing != false)
-                    {
-                        homeViewModel.accounts[i].Balance += 100;
-                    }
-                    else
-                    {
-                        homeViewModel.accounts[i].Balance += 10;
-                    }
-                }
-            }
-            return View();
+            homeViewModel.Raise();
+            return RedirectToAction("Index");
         }
     }
 }

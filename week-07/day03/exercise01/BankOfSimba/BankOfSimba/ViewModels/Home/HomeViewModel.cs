@@ -13,5 +13,20 @@ namespace BankOfSimba.ViewModels.Home
             new BankAccount("Limba", 4000, AnimalType.Giraffe, false, true),
             new BankAccount("Zordon", 10000, AnimalType.Lion, false, false)
         };
+
+        public void Raise()
+        {
+            for (int i = 0; i < accounts.Count; i++)
+            {
+                if (accounts[i].IsKing != false)
+                {
+                    accounts[i].Balance += 100;
+                }
+                else
+                {
+                    accounts[i].Balance += 10;
+                }
+            }
+        }
     }  
 }
