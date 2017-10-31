@@ -18,7 +18,7 @@ namespace TodoApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<TodoContext>(options => options.UseSqlServer(@"ConnectionStrings:Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30"));
+            services.AddDbContext<TodoContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=todomaster;Integrated Security=True;Connect Timeout=30"));
             services.AddScoped<TodoRepository>();
         }
 

@@ -22,8 +22,8 @@ namespace TodoApp.Controllers
         [Route("/")]
         public IActionResult List()
         {
-            string temp = "This is my first todo";
-            return View((object)temp);
+            TodoRepository.AddTodo();
+            return RedirectToAction("List");
         }
     }
 }

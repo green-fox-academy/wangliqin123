@@ -14,5 +14,18 @@ namespace TodoApp.Repositories
         {
             TodoContext = todoContext;
         }
+
+        public void AddTodo()
+        {
+            var todo = new Todo()
+            {
+                Title = "do lunch",
+                IsDone = true,
+                IsUrgent = true
+            };
+
+            TodoContext.Todos.Add(todo);
+            TodoContext.SaveChanges();
+        }
     }
 }

@@ -1,9 +1,11 @@
-﻿@model string
+﻿@model TodoApp.Todo
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Todos for today:</title>
 </head>
 <body>
- @Model
+    <p>Title: @Model.Title</p>
+    <p>IsDone: @Model.IsDone</p>
+    <p>IsUrgent: @Model.IsUrgent</p>
 </body>
 </html>
