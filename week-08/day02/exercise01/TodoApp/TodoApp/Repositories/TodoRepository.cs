@@ -15,17 +15,27 @@ namespace TodoApp.Repositories
             TodoContext = todoContext;
         }
 
+        public List<Todo> GetList()
+        {
+            return TodoContext.Todos.ToList();
+        }
+
         public void AddTodo()
         {
             var todo = new Todo()
             {
-                Title = "do lunch",
+                Title = "do homework",
                 IsDone = true,
                 IsUrgent = true
             };
 
             TodoContext.Todos.Add(todo);
             TodoContext.SaveChanges();
+        }
+
+        public Todo GetLastTodo()
+        {
+            return TodoContext.Todos.Last();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace TodoApp
         {
             services.AddMvc();
             services.AddDbContext<TodoContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=todomaster;Integrated Security=True;Connect Timeout=30"));
-            services.AddScoped<TodoRepository>();
+            services.AddScoped<TodoRepository>(); 
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -32,7 +32,7 @@ namespace TodoApp
             }
 
             app.UseMvc();
-
+            app.UseStaticFiles();
         }
     }
 }

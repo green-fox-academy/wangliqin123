@@ -8,7 +8,7 @@ using TodoApp.Repositories;
 
 namespace TodoApp.Controllers
 {
-    [Route("/todo")]
+    [Route("")]
     public class TodoController : Controller
     {
 
@@ -19,11 +19,23 @@ namespace TodoApp.Controllers
             TodoRepository = todoRepository;
         }
 
-        [Route("/")]
+        //[Route("")]
+        //public IActionResult List()
+        //{
+        //    return View(TodoRepository.GetLastTodo());
+        //}
+
+        //[Route("/add")]
+        //public IActionResult AddTodo()
+        //{
+        //    TodoRepository.AddTodo();
+        //    return RedirectToAction("List");
+        //}
+
+        [Route("")]
         public IActionResult List()
         {
-            TodoRepository.AddTodo();
-            return RedirectToAction("List");
+            return View(TodoRepository.GetList());
         }
     }
 }
