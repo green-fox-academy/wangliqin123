@@ -13,16 +13,21 @@
             <td>Action</td>
             <td>Done</td>
             <td>Urgent</td>
+            <td>Delete Action</td>
         </tr>
         @foreach (var item in Model)
-            {
+         {
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Title</td>
                 <td>@item.IsDone</td>
                 <td>@item.IsUrgent</td>
+                <td><form action="/(@item.Id)/delete" method="post">
+                    <input type="hidden" name="Id" value="@item.Id" />
+                    <button id="table" class="number" type="submit">Delete</button>
+                    </form></td>
             </tr>
-            }
+         }
     </table>
 </body>
 </html>

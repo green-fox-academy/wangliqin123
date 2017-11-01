@@ -7,7 +7,6 @@ using TodoApp.Repositories;
 
 namespace TodoApp.Controllers
 {
-    [Route("/todo")]
     public class TodoController : Controller
     {
         TodoRepository TodoRepository;
@@ -33,6 +32,22 @@ namespace TodoApp.Controllers
         public IActionResult Add()
         {
             return View();
+        }
+
+        [Route("/todo/add")]
+        [HttpPost]
+        public IActionResult Add(string title)
+        {
+            TodoRepository.AddTodo(title);
+            return RedirectToAction("List");
+        }
+
+        [Route("/{id}/delete")]
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            TodoRepository.DeleteTodo(id);
+            return RedirectToAction("List");
         }
     }
 }

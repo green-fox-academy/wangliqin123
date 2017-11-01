@@ -22,25 +22,32 @@ namespace TodoApp.Repositories
 
         public List<Todo> NotDoneList()
         {
-            return TodoContext.Todos.Where(a => a.IsDone == false).ToList();
+            var notDone = from title in TodoContext.Todos
+                        where title.IsDone == false
+                        select title;
+            return notDone.ToList();
+
+            //return TodoContext.Todos.Where(x => x.IsDone == false).ToList();
         }
 
-        //public void AddTodo()
-        //{
-        //    var todo = new Todo()
-        //    {
-        //        Title = "do homework",
-        //        IsDone = true,
-        //        IsUrgent = true
-        //    };
+        public void AddTodo(string title)
+        {
+            var todo = new Todo()
+            {
+                Title = title,
+                IsDone = false,
+                IsUrgent = false
+            };
 
-        //    TodoContext.Todos.Add(todo);
-        //    TodoContext.SaveChanges();
-        //}
+            TodoContext.Todos.Add(todo);
+            TodoContext.SaveChanges();
+        }
 
-        //public Todo GetLastTodo()
-        //{
-        //    return TodoContext.Todos.Last();
-        //}
+        public void DeleteTodo(int id)
+        {
+            Todo deletedTodo = TodoContext.Todos.FirstOrDefault(x => x.Id == id);
+            TodoContext.Todos.Remove(deletedTodo);
+            TodoContext.SaveChanges();
+        }
     }
 }
