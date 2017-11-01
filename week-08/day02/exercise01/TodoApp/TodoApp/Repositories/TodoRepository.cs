@@ -20,6 +20,11 @@ namespace TodoApp.Repositories
             return TodoContext.Todos.ToList();
         }
 
+        public List<Todo> NotDoneList()
+        {
+            return TodoContext.Todos.Where(a => a.IsDone == false).ToList();
+        }
+
         public void AddTodo()
         {
             var todo = new Todo()
