@@ -27,5 +27,12 @@ namespace TodoApp.Controllers
             }
             return View(TodoRepository.GetList());
         }
+
+        [Route("/todo/add")]
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
     }
 }

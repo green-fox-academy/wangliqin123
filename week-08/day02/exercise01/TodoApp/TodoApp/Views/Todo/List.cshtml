@@ -2,15 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/StyleSheet.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
 </head>
 <body>
+    <h1>Todos for today:</h1>
+    <h2><a href="/todo/add">Add new Todo</a></h2>
     <table>
         <tr>
             <td>Id</td>
-            <td>Title</td>
-            <td>IsDone</td>
-            <td>IsUrgent</td>
+            <td>Action</td>
+            <td>Done</td>
+            <td>Urgent</td>
         </tr>
         @foreach (var item in Model)
             {
@@ -22,6 +24,5 @@
             </tr>
             }
     </table>
-
 </body>
 </html>
