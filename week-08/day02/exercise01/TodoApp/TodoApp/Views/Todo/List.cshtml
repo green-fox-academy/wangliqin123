@@ -14,6 +14,7 @@
             <td>Done</td>
             <td>Urgent</td>
             <td>Delete Action</td>
+            <td>Update Action</td>
         </tr>
         @foreach (var item in Model)
          {
@@ -26,6 +27,9 @@
                     <input type="hidden" name="Id" value="@item.Id" />
                     <button id="table" class="number" type="submit">Delete</button>
                     </form></td>
+                <td>
+                    <h2><a href="/todo/update">Edit</a></h2>
+                </td>
             </tr>
          }
     </table>
