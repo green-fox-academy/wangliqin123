@@ -1,4 +1,4 @@
-﻿@model ICollection<TodoApp.Todo>
+﻿@model List<TodoApp.Todo>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -28,7 +28,10 @@
                     <button id="table" class="number" type="submit">Delete</button>
                     </form></td>
                 <td>
-                    <h2><a href="/todo/update">Edit</a></h2>
+                    <form action="/@item.Id)/update" method="post">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <button id="table" class="number" type="submit">Edit</button>
+                    </form>                   
                 </td>
             </tr>
          }

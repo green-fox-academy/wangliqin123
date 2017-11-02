@@ -50,15 +50,15 @@ namespace TodoApp.Repositories
             TodoContext.SaveChanges();
         }
 
-        public void UpdateTodo(string title)
+        public Todo Updating(int id)
         {
-            var todo = new Todo()
-            {
+            return TodoContext.Todos.FirstOrDefault(x => x.Id == id);
+        }
 
-            }
+        public void UpdateTodo(Todo todo)
+        {          
             TodoContext.Todos.Update(todo);
             TodoContext.SaveChanges();
-
         }
     }
 }
