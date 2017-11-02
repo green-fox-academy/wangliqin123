@@ -1,6 +1,23 @@
 ﻿@model TodoApp.Todo
-<input type="hidden" name="Id" value="@Model.Id" />
-<div>ID: @Model.Id</div>
-<div>Action: @Model.Title</div>
-<div>Done: @Model.IsDone</div>
-<div>Urgent: @Model.IsUrgent</div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
+</head>
+<body>
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Action</td>
+            <td>Done</td>
+            <td>Urgent</td>
+        </tr>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Title</td>
+            <td>@Model.IsDone</td>
+            <td>@Model.IsUrgent</td>
+        </tr>
+    </table>
+    <h2><a href="/todo">Back to table</a></h2>
+</body>
