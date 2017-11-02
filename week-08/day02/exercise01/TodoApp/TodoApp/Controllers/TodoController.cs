@@ -65,5 +65,13 @@ namespace TodoApp.Controllers
             TodoRepository.UpdateTodo(todo);
             return RedirectToAction("List");
         }
+
+        [Route("/{id}/item")]
+        [HttpGet]
+        public IActionResult Item(int id)
+        {
+            var todo = TodoRepository.Updating(id);
+            return View(todo);
+        }
     }
 }
