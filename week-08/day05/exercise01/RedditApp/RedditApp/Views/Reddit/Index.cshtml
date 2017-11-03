@@ -1,1 +1,24 @@
-﻿
+﻿@model List<RedditApp.Models.Reddit>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/StyleSheet.css")" />
+</head>
+<body>
+    <h1>Posts</h1>
+    <h2><a href="/todo/add">Add new POST</a></h2>
+    <table>
+        <tr>
+            <td>Score</td>
+            <td>Post</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Score</td>
+                <td>@item.Post</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

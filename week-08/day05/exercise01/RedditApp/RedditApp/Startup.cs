@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RedditApp.Entities;
+using Microsoft.EntityFrameworkCore;
+using RedditApp.Repositories;
 
 namespace RedditApp
 {
@@ -15,6 +18,8 @@ namespace RedditApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<RedditContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=redditmaster;Integrated Security=True;Connect Timeout=30"));
+            services.AddScoped<RedditRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
