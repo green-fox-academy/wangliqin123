@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RedditApp.Models
+﻿namespace RedditApp.Models
 {
     public class Reddit
     {
+        public int Score { get; set; }
+        public string Post { get; set; }
     }
 }
