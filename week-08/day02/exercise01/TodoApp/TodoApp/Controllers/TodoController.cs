@@ -47,9 +47,10 @@ namespace TodoApp.Controllers
         }
 
         [Route("/{id}/update")]
-        [HttpPost]
-        public IActionResult Update(int id)
+        [HttpGet]
+        public IActionResult Update([FromQuery]string Id)
         {
+            int id = int.Parse(Id);
             var todo = TodoRepository.Updating(id);
             return View(todo);
         }
