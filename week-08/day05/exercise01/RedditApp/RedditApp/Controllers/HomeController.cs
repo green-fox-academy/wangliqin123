@@ -22,5 +22,20 @@ namespace RedditApp.Controllers
         {
             return View(RedditRepository.GetList());
         }
+
+        [Route("/add")]
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [Route("/add")]
+        [HttpPost]
+        public IActionResult Add(string post)
+        {
+            RedditRepository.AddPost(post);
+            return RedirectToAction("Index");
+        }
     }
 }

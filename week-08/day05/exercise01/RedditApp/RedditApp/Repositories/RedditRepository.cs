@@ -20,5 +20,17 @@ namespace RedditApp.Repositories
         {
             return RedditContext.Posts.ToList();
         }
+
+        public void AddPost(string post)
+        {
+            var newPost = new Reddit()
+            {
+                Post = post,
+                Score = 0,                         
+            };
+
+            RedditContext.Posts.Add(newPost);
+            RedditContext.SaveChanges();
+        }
     }
 }
