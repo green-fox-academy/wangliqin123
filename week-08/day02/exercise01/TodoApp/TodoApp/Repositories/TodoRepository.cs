@@ -48,7 +48,7 @@ namespace TodoApp.Repositories
             TodoContext.SaveChanges();
         }
 
-        public Todo Updating(int id)
+        public Todo GetId(int id)
         {
             return TodoContext.Todos.FirstOrDefault(x => x.Id == id);
         }

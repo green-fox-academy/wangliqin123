@@ -51,7 +51,7 @@ namespace TodoApp.Controllers
         public IActionResult Update([FromQuery]string Id)
         {
             int id = int.Parse(Id);
-            var todo = TodoRepository.Updating(id);
+            var todo = TodoRepository.GetId(id);
             return View(todo);
         }
 
@@ -67,7 +67,7 @@ namespace TodoApp.Controllers
         [HttpGet]
         public IActionResult Item(int id)
         {
-            var todo = TodoRepository.Updating(id);
+            var todo = TodoRepository.GetId(id);
             return View(todo);
         }
     }
