@@ -34,7 +34,7 @@ namespace TodoApp.Repositories
             {
                 Title = title,
                 IsDone = false,
-                IsUrgent = false
+                IsUrgent = true
             };
 
             TodoContext.Todos.Add(todo);
