@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace Frontend.Controllers
 {
@@ -48,13 +44,19 @@ namespace Frontend.Controllers
         }
 
         [Route("/appenda/{appendable}")]
+        [Route("/appenda")]
         [HttpGet]
         public IActionResult Appenda(string appendable)
         {
+            if (string.IsNullOrEmpty(appendable))
+            {
+                return NotFound();
+            }
             return Json(new {appended = $"{appendable}a" });
         }
 
         [Route("/dountil/{what}")]
+        [Route("/dountil")]
         [HttpPost]
         public IActionResult Index(string what, [FromBody] DoUntil until)
         {
@@ -62,6 +64,10 @@ namespace Frontend.Controllers
             if (until == null)
             {
                 return Json(new { error = "Please provide a number!" });
+            }
+            if (string.IsNullOrEmpty(what))
+            {
+                return NotFound();
             }
             else if (what == "sum")
             {
@@ -96,18 +102,46 @@ namespace Frontend.Controllers
 
         [HttpPost]
         [Route("/arrays")]
-        public IActionResult Array([FromBody] MyArray numbers)
+        public IActionResult Array([FromBody] MyArray myarray)
         {
-            if ()
+            if (string.IsNullOrEmpty(myarray.what))
             {
+                return NotFound();
+            }
+            if (myarray.what == "sum")
+            {
+                int sum = myarray.numbers.ToList().Sum();
+               
+                return Json(new { result = sum });
 
+            }
+            else if (myarray.what == "double")
+            {
+                for (int i = 0; i < myarray.numbers.Length; i++)
+                {
+                    myarray.numbers[i] = myarray.numbers[i] * 2;
+                }
+                return Json(new { result = myarray.numbers });
+            }
+            else if (myarray.what == "multiply")
+            {
+                int multiplication = 1;
+                for (int i = 0; i < myarray.numbers.Length; i++)
+                {
+                    multiplication *= myarray.numbers[i];
+                }
+                return Json(new { result = multiplication });
+            }
+            else
+            {
+                return Json(new { error = "Please provide what to do with the numbers!" });
             }
         }
 
         public class MyArray
         {
             public int[] numbers { get; set; }
+            public string what { get; set; }
         }
-
     }
 }
