@@ -18,10 +18,15 @@ namespace Frontend.Controllers
         [Route("/doubling")]
         [HttpGet]
         public IActionResult Index(int? input)
-        {
-
-
-            return Json();
+        {         
+            if (input == null)
+            {
+                return Json(new {error = "Please provide an input!"});
+            }
+            else 
+            {
+                return Json(new { received = input, result = input*2});
+            }
         }
     }
 }
