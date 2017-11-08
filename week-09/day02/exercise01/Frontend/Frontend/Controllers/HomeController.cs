@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Frontend.Models;
 
 namespace Frontend.Controllers
 {
@@ -56,12 +57,12 @@ namespace Frontend.Controllers
         }
 
         [Route("/dountil/{what}")]
-        [Route("/dountil")]
+        //[Route("/dountil")]
         [HttpPost]
         public IActionResult Index(string what, [FromBody] DoUntil until)
         {
 
-            if (until == null)
+            if (until == null || until.Until == null)
             {
                 return Json(new { error = "Please provide a number!" });
             }
@@ -82,8 +83,8 @@ namespace Frontend.Controllers
             else if(what == "factor")
             {
                 int fact = 1;
-                fact = until.Until;
-                for (int i = until.Until - 1; i >= 1; i--)
+                fact = (int)until.Until;
+                for (int i = (int)until.Until - 1; i >= 1; i--)
                 {
                     fact = fact * i;
                 }
@@ -93,11 +94,6 @@ namespace Frontend.Controllers
             {
                 return Json(new {  result = 4 });
             }
-        }
-
-        public class DoUntil
-        {
-            public int Until { get; set; }
         }
 
         [HttpPost]
