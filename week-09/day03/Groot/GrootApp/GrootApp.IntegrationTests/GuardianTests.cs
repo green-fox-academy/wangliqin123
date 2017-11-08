@@ -41,5 +41,13 @@ namespace GrootApp.IntegrationTests
 
             //Assert.Equal("{\"received\":\"somemessage\",\"translated\":\"I am Groot!\"}", test);
         }
+
+        [Fact]
+        public async Task IndexShouldReturnStatusOkWithErroreMessage()
+        {
+            var response = await Client.GetAsync("/groot?message=");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
     }
 }
