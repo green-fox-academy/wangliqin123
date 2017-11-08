@@ -57,7 +57,7 @@ namespace Frontend.Controllers
         }
 
         [Route("/dountil/{what}")]
-        //[Route("/dountil")]
+        [Route("/dountil")]
         [HttpPost]
         public IActionResult Index(string what, [FromBody] DoUntil until)
         {
@@ -132,12 +132,6 @@ namespace Frontend.Controllers
             {
                 return Json(new { error = "Please provide what to do with the numbers!" });
             }
-        }
-
-        public class MyArray
-        {
-            public int[] numbers { get; set; }
-            public string what { get; set; }
-        }
+        }      
     }
 }

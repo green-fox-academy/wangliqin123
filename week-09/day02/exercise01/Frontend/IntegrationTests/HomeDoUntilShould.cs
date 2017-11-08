@@ -24,7 +24,7 @@ namespace Frontend.IntegrationTests
         }
 
         [Fact]
-        public async Task ReturnErrorMessageWithNullContent()
+        public async Task ReturnErrorMessageWithNullInputSum()
         {
             var data = new StringContent(content: "", encoding: Encoding.UTF8, mediaType: "application/json");
             var response = await Client.PostAsync("dountil/sum", data);
@@ -36,9 +36,14 @@ namespace Frontend.IntegrationTests
         }
 
         [Fact]
-        public async Task ReturnErrorMessageWithNullString()
+        public async Task ReturnErrorMessageWithOutWhat()
         {
-            var data = new StringContent(content: "", encoding: Encoding.UTF8, mediaType: "application/json");
+            var usedUntil = new DoUntil
+            {
+                Until = 5,
+            };
+            var convertedUsedUntil = JsonConvert.SerializeObject(usedUntil);
+            var data = new StringContent(convertedUsedUntil.ToString(), encoding: Encoding.UTF8, mediaType: "application/json");
             var response = await Client.PostAsync("dountil", data);
             var responseString = await response.Content.ReadAsStringAsync();
 
@@ -46,7 +51,7 @@ namespace Frontend.IntegrationTests
         }
 
         [Fact]
-        public async Task ReturnErrorMessageWithUntil5()
+        public async Task ReturnResultWithUntil5()
         {
             var usedUntil = new DoUntil
             {
