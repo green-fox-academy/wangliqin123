@@ -1,6 +1,8 @@
 using Frontend.Controllers;
+using Frontend.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -41,6 +43,22 @@ namespace Frontend.IntegrationTests
             var responseString = await response.Content.ReadAsStringAsync();
 
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task ReturnErrorMessageWithUntil5()
+        {
+            var usedUntil = new DoUntil
+            {
+                Until = 5,
+            };
+            var convertedUsedUntil = JsonConvert.SerializeObject(usedUntil);
+            var data = new StringContent(convertedUsedUntil.ToString(), encoding: Encoding.UTF8, mediaType: "application/json");
+            var response = await Client.PostAsync("dountil/sum", data);
+
+            string responseJson = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("{\"result\":15}", responseJson);
         }
     }
 }
