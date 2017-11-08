@@ -30,16 +30,16 @@ namespace GrootApp.IntegrationTests
         [Fact]
         public async Task ReturnExpectedResponse()
         {
-            //var response = await Client.GetAsync("/doubling?input=5");
+            var response = await Client.GetAsync("/groot?message=somemessage");
 
-            //var responseJson = await response.Content.ReadAsStringAsync();
+            var responseJson = await response.Content.ReadAsStringAsync();
 
-            //Assert.Equal("{\"received\":5,\"result\":10}", responseJson);
+            Assert.Equal("{\"received\":\"somemessage\",\"translated\":\"I am Groot!\"}", responseJson);
 
 
-            string test = await Client.GetStringAsync("/doubling?input=5");
+            //string test = await Client.GetStringAsync("/groot?message=somemessage");
 
-            Assert.Equal("{\"received\":5,\"result\":10}", test);
+            //Assert.Equal("{\"received\":\"somemessage\",\"translated\":\"I am Groot!\"}", test);
         }
     }
 }
