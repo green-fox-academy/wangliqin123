@@ -45,12 +45,12 @@ namespace TodoAppIntegrationTests
 
                 dbContext.Todos.Add(new Todo()
                 {
-                    Title = "eat",                  
+                    Title = "make lunch",                  
                 });
                 dbContext.SaveChanges();
 
-                string expected = "eat";
-                var todo = await dbContext.Todos.FirstOrDefaultAsync(x => x.Title.Equals("eat"));
+                string expected = "make lunch";
+                var todo = await dbContext.Todos.FirstOrDefaultAsync(x => x.Title.Equals("make lunch"));
                 Assert.Equal(expected, todo.Title);
             }             
         }

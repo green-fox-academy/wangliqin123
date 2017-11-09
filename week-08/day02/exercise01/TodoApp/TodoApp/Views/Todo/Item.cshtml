@@ -4,7 +4,6 @@
         Layout = "_Layout";
     }
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    @*<link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/StyleSheet.css")" />*@
     <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
@@ -37,8 +36,7 @@
                     else if (@Model.IsUrgent == false)
                     {
                         <td><img src="~/Assets/x.png" /></td>
-                    }
-                    
+                    }                 
                 </tr>
             </table>
             <h2><a href="/todo">Back to table</a></h2>
