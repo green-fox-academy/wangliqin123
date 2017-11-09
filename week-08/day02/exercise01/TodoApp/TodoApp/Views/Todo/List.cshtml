@@ -24,9 +24,9 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.Id</td>
+                                <td><h3><strong>@item.Id</strong></h3></td>
                                 <td>
-                                    <a href="/@item.Id/item"> @item.Title</a>
+                                    <h3><strong><a href="/@item.Id/item"> @item.Title</a></strong></h3>
                                     <input type="hidden" class="bg-warning active"name="Id" value="@item.Id" />
                                 </td>
                                 @if (item.IsDone == true)

@@ -10,6 +10,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
+            <h1 class="text-center"><u><strong><mark>Info</mark></strong></u></h1><br />
             <input type="hidden" name="Id" value="@Model.Id" />
             <table class="table table-striped table-bordered col-md-5 table-hover">
                 <tr>
@@ -19,10 +20,25 @@
                     <td>Urgent</td>
                 </tr>
                 <tr>
-                    <td>@Model.Id</td>
-                    <td>@Model.Title</td>
-                    <td>@Model.IsDone</td>
-                    <td>@Model.IsUrgent</td>
+                    <td><h3><strong>@Model.Id</strong></h3></td>
+                    <td><h3><strong>@Model.Title</strong></h3></td>
+                    @if (@Model.IsDone == true)
+                    {
+                        <td><img src="~/Assets/c.png" /></td>
+                    }
+                    else if (@Model.IsDone == false)
+                    {
+                        <td><img src="~/Assets/x.png" /></td>
+                    }
+                    @if (@Model.IsUrgent == true)
+                    {
+                        <td><img src="~/Assets/c.png" /></td>
+                    }
+                    else if (@Model.IsUrgent == false)
+                    {
+                        <td><img src="~/Assets/x.png" /></td>
+                    }
+                    
                 </tr>
             </table>
             <h2><a href="/todo">Back to table</a></h2>
