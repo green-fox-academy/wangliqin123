@@ -1,12 +1,10 @@
 ﻿body {
     padding-top: 70px;
     padding-bottom: 30px;
+   
 }
 
-
-
-
-/*table {
+table {
     background-color: lightyellow;
     border-style: solid;
     font-weight: bolder;
@@ -27,4 +25,4 @@ table tr:first-child td {
 h1 {
     font-weight: bolder;
     font-size: 30px;
-}*/
+}

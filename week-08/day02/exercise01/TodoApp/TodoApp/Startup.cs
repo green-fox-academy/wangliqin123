@@ -28,6 +28,7 @@ namespace TodoApp
 
             app.UseMvc();
             app.UseStaticFiles();
+            app.UseDefaultFiles();
         }
     }
 }

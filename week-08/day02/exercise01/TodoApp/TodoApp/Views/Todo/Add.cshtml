@@ -1,8 +1,14 @@
-﻿<body>
-    <form action="/todo/add" method="post">
+﻿<head>
+@{
+    Layout = "_Layout";
+}
+</head>
+
+<body>
+    <form action="/todo/add" method="post" class="col-lg-3">
         <h1>Add new todo</h1>
         <label for="Title"></label>
         <input type="text" name="Title" /><br>
-        <button type="submit">Submit</button>
+        <button type="submit" class="active btn-danger">Submit</button>
     </form>
 </body>
