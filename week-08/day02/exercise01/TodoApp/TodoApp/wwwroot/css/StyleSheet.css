@@ -24,5 +24,6 @@ table tr:first-child td {
 
 h1 {
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 60px;
+    font-family:Verdana;
 }

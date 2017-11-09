@@ -4,24 +4,17 @@
         Layout = "_Layout";
     }
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>Edit todo</h1>
+<body class="text-left">
+    <div class="container-fluid">      
+                <h1><mark>Editing choosen Todo</mark></h1>
                 @using (Html.BeginForm("edit", "todo"))
                 {
                     <input type="hidden" name="Id" value="@Model.Id" />
-                    <p>Todo description : @Html.TextBoxFor(x => x.Title)</p>
-                    <p>Make it important: @Html.CheckBoxFor(x => x.IsUrgent)</p>
-                    <p>Ready or not : @Html.CheckBoxFor(x => x.IsDone)</p>
-                    <button type="submit">Submit</button>
+                    <h2><strong>Description :</strong>  @Html.TextBoxFor(x => x.Title)</h2>
+                    <h2><strong>Important or not :</strong>  @Html.CheckBoxFor(x => x.IsUrgent, new {style = "width:30px;height:15px"})</h2>
+                    <h2><strong>Ready or not :</strong> @Html.CheckBoxFor(x => x.IsDone, new {style = "width:30px;height:15px"})</h2>
+                    <button class="btn btn-success btn-lg" type="submit">Submit</button>
                 }
-                <h2><a href="/todo">cancel</a></h2>
-            </div>
-
-        </div>
-
-    </div>
-   
+                <br /><h><a class="btn btn-warning btn-lg" href="/todo">Cancel</a></h>     
+    </div>  
 </body>

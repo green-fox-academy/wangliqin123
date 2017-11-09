@@ -19,14 +19,14 @@ namespace TodoApp
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //loggerFactory.AddConsole();
+            loggerFactory.AddConsole();
 
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            app.UseMvcWithDefaultRoute();
-            app.UseExceptionHandler("/Errors");
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            //app.UseMvcWithDefaultRoute();
+            //app.UseExceptionHandler("/Errors");
             app.UseMvc();
             app.UseStaticFiles();
             app.UseDefaultFiles();
