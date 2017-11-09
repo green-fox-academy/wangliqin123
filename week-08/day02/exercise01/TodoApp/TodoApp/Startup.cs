@@ -25,8 +25,7 @@ namespace TodoApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            //app.UseMvcWithDefaultRoute();
-            //app.UseExceptionHandler("/Errors");
+
             app.UseMvc();
             app.UseStaticFiles();
             app.UseDefaultFiles();
