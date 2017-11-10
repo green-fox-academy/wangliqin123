@@ -37,7 +37,9 @@ namespace TodoAppIntegrationTests
         [Fact]
         public async Task AddNewTodo()
         {
-            var options = new DbContextOptionsBuilder<TodoContext>().UseInMemoryDatabase(databaseName: "TodosAddTestDb").Options;
+            var options = new DbContextOptionsBuilder<TodoContext>()
+                .UseInMemoryDatabase(databaseName: "TodosAddTestDb")
+                .Options;
 
             using (var dbContext = new TodoContext(options))
             {
@@ -50,7 +52,8 @@ namespace TodoAppIntegrationTests
                 dbContext.SaveChanges();
 
                 string expected = "make lunch";
-                var todo = await dbContext.Todos.FirstOrDefaultAsync(x => x.Title.Equals("make lunch"));
+                var todo = await dbContext.Todos
+                    .FirstOrDefaultAsync(x => x.Title.Equals("make lunch"));
                 Assert.Equal(expected, todo.Title);
             }
         }
