@@ -11,6 +11,7 @@ using GreenFoxQuizApp.Entities;
 using Microsoft.EntityFrameworkCore;
 using GreenFoxQuizApp.Services;
 using GreenFoxQuizApp.Repositories;
+using GreenFoxQuizApp.Models;
 
 namespace GreenFoxQuizApp
 {
@@ -21,6 +22,7 @@ namespace GreenFoxQuizApp
             services.AddMvc();
             services.AddScoped<QuizService>();
             services.AddScoped<QuizRepository>();
+            services.AddSingleton<List<Quiz>>();
             services.AddScoped<GreenFoxQuizAppContext>();
             services.AddDbContext<GreenFoxQuizAppContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=quizmaster;Integrated Security=True;Connect Timeout=30"));
         }

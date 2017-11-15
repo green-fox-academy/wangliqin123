@@ -20,7 +20,15 @@ namespace GreenFoxQuizApp.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            QuizService.MakeStaticList();
+            return Json(QuizService.FiveQuestionsToJson());
+        }
+
+        [Route("/answers")]
+        [HttpGet]
+        public IActionResult Post()
+        {
+            return Json(QuizService.FiveAnswerForJson());
         }
     }
 }
