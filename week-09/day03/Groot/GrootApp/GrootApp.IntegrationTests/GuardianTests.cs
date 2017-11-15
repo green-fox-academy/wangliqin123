@@ -30,24 +30,29 @@ namespace GrootApp.IntegrationTests
         [Fact]
         public async Task ReturnExpectedResponse()
         {
-            var response = await Client.GetAsync("/groot?message=somemessage");
+            var response = await Client.GetAsync("/groot/message");
 
             var responseJson = await response.Content.ReadAsStringAsync();
 
-            Assert.Equal("{\"received\":\"somemessage\",\"translated\":\"I am Groot!\"}", responseJson);
-
-
-            //string test = await Client.GetStringAsync("/groot?message=somemessage");
-
-            //Assert.Equal("{\"received\":\"somemessage\",\"translated\":\"I am Groot!\"}", test);
+            Assert.Equal("{\"received\":\"message\",\"translated\":\"I am Groot!\"}", responseJson);
         }
+
+        [Fact]
+        public async Task ReturnExpectedResponseShorter()
+        {
+            string test = await Client.GetStringAsync("/groot/message");
+
+            Assert.Equal("{\"received\":\"message\",\"translated\":\"I am Groot!\"}", test);
+        }                 
 
         [Fact]
         public async Task IndexShouldReturnStatusOkWithErroreMessage()
         {
-            var response = await Client.GetAsync("/groot?message=");
+            var response = await Client.GetAsync("/groot");
 
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            var responseJson = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("{\"error\":\"I am Groot!\"}", responseJson);
         }
     }
 }

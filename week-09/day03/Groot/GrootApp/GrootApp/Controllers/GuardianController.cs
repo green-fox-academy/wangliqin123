@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GrootApp.Controllers
 {
+
     public class GuardianController : Controller
-    {
+    {     
         [HttpGet]
+        [Route("/groot/{message}")]
         [Route("/groot")]
         public IActionResult Index(string message)
         {
@@ -18,7 +20,7 @@ namespace GrootApp.Controllers
             }
             else
             {
-                return Json(new { received = "somemessage", translated = "I am Groot!" });
+                return Json(new { received = message, translated = "I am Groot!" });
             }
         }
     }
