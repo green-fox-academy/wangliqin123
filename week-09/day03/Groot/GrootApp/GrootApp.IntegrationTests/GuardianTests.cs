@@ -30,7 +30,7 @@ namespace GrootApp.IntegrationTests
         [Fact]
         public async Task ReturnExpectedResponse()
         {
-            var response = await Client.GetAsync("/groot/message");
+            var response = await Client.GetAsync("/groot?message");
 
             var responseJson = await response.Content.ReadAsStringAsync();
 
@@ -40,7 +40,7 @@ namespace GrootApp.IntegrationTests
         [Fact]
         public async Task ReturnExpectedResponseShorter()
         {
-            string test = await Client.GetStringAsync("/groot/message");
+            string test = await Client.GetStringAsync("/groot?message=message");
 
             Assert.Equal("{\"received\":\"message\",\"translated\":\"I am Groot!\"}", test);
         }                 

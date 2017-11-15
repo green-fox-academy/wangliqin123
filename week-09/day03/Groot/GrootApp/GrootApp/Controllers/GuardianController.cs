@@ -18,7 +18,6 @@ namespace GrootApp.Controllers
         }
 
         [HttpGet]
-        [Route("/groot/{message}")]
         [Route("/groot")]
         public IActionResult Index(string message)
         {
