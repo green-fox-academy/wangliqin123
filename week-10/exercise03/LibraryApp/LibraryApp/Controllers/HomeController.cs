@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LibraryApp.Services;
+using LibraryApp.Models;
 
 namespace LibraryApp.Controllers
 {
@@ -17,12 +18,14 @@ namespace LibraryApp.Controllers
             BookService = bookService;
         }
 
+        [Route("/book")]
         [HttpGet]        
         public IActionResult Index()
-        {
-            return View();
+        {           
+            return View(BookService.GetAllAuthor());
         }
 
+        [Route("/book")]
         [HttpPost]
         public IActionResult Add(string author, string city, string country)
         {
@@ -31,7 +34,7 @@ namespace LibraryApp.Controllers
         }
 
         [HttpPost]
-        [Route("/book/{id}")]
+        [Route("/{id}/delete")]
         public IActionResult Delete(int id)
         {
             BookService.RemoveAuthor(id);
@@ -43,6 +46,23 @@ namespace LibraryApp.Controllers
         public IActionResult BookListJson()
         {
             return Json(BookService.ReturnBookList());
+        }
+
+        [Route("/{id}/update")]
+        [HttpGet]
+        public IActionResult Update([FromQuery]string Id)
+        {
+            int id = int.Parse(Id);
+            var book = BookService.GetId(id);
+            return View(book);
+        }
+
+        [Route("/{id}/update")]
+        [HttpPost]
+        public IActionResult Edit(Book book)
+        {
+            BookService.EditAuthor(book);
+            return RedirectToAction("index");
         }
     }
 }

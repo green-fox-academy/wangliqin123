@@ -16,6 +16,11 @@ namespace LibraryApp.Services
             BookRepository = bookRepository;
         }
 
+        public List<Book> GetAllAuthor()
+        {
+            return BookRepository.GetAllAuthorList();
+        }
+
         public List<Book> ReturnBookList()
         {
             return BookRepository.GetAuthorList();
@@ -29,6 +34,16 @@ namespace LibraryApp.Services
         public void RemoveAuthor(int id)
         {
             BookRepository.DeleteAuthor(id);
+        }
+
+        public void EditAuthor(Book book)
+        {
+            BookRepository.UpdateBook(book);
+        }
+
+        public Book GetId(int id)
+        {
+            return BookRepository.GetItemId(id);
         }
     }
 }

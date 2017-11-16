@@ -1,0 +1,17 @@
+﻿@model LibraryApp.Models.Book
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>update Author</h1>
+    @using (Html.BeginForm("edit", "book"))
+    {
+        <input type="hidden" name="Id" value="@Model.Id" />
+                    <h2>Auhthor :  @Html.TextBoxFor(x => x.Author)</h2>
+                    <h2>City :  @Html.TextBoxFor(x => x.City)</h2>
+                    <h2>Country :@Html.TextBoxFor(x => x.Country)</h2>
+                    <button type="submit">Submit</button>
+    }
+</body>
+</html>

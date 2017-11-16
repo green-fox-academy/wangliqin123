@@ -16,6 +16,11 @@ namespace LibraryApp.Repositories
             BookContext = bookContext;
         }
 
+        public List<Book> GetAllAuthorList()
+        {
+            return BookContext.Books.ToList();
+        }
+
         public List<Book> GetAuthorList()
         {
             return BookContext.Books.Where(x => x.Country.Equals("UK")).ToList();
@@ -38,6 +43,17 @@ namespace LibraryApp.Repositories
             Book deletedAuthor = BookContext.Books.FirstOrDefault(x => x.Id == id);
             BookContext.Books.Remove(deletedAuthor);
             BookContext.SaveChanges();
+        }
+
+        public void UpdateBook(Book book)
+        {
+            BookContext.Books.Update(book);
+            BookContext.SaveChanges();
+        }
+
+        public Book GetItemId(int id)
+        {
+            return BookContext.Books.FirstOrDefault(x => x.Id == id);
         }
     }
 }
