@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using LibraryApp.Entities;
+using LibraryApp.Repositories;
+using LibraryApp.Services;
 
 namespace LibraryApp
 {
@@ -19,7 +21,9 @@ namespace LibraryApp
         {
             services.AddMvc();
             services.AddDbContext<BookContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=bookmaster;Integrated Security=True;Connect Timeout=30"));
-            //services.AddScoped<xxxRepository>();
+            services.AddScoped<BookRepository>();
+            services.AddScoped<BookContext>();
+            services.AddScoped<BookService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
