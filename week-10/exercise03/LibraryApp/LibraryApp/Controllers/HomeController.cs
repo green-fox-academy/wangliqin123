@@ -41,13 +41,6 @@ namespace LibraryApp.Controllers
             return LocalRedirect("/book");
         }
 
-        [HttpGet]
-        [Route("/api/book")]
-        public IActionResult BookListJson()
-        {
-            return Json(BookService.ReturnBookList());
-        }
-
         [Route("/{id}/update")]
         [HttpGet]
         public IActionResult Update([FromQuery]string Id)
