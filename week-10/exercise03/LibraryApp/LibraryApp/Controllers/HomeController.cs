@@ -7,6 +7,7 @@ using LibraryApp.Services;
 
 namespace LibraryApp.Controllers
 {
+    [Route("/book")]
     public class HomeController : Controller
     {
         BookService BookService;
@@ -16,11 +17,25 @@ namespace LibraryApp.Controllers
             BookService = bookService;
         }
 
-        [HttpGet]
-        [Route("/")]
+        [HttpGet]        
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(string author, string city, string country)
+        {
+            BookService.AddNewAuthor(author, city, country);
+            return LocalRedirect("/book");          
+        }
+
+        [HttpPost]
+        [Route("/book/{id}")]
+        public IActionResult Delete(int id)
+        {
+            BookService.RemoveAuthor(id);
+            return LocalRedirect("/book");
         }
 
         [HttpGet]

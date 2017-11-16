@@ -20,5 +20,15 @@ namespace LibraryApp.Services
         {
             return BookRepository.GetAuthorList();
         }
+
+        public void AddNewAuthor(string author, string city, string country)
+        {
+            BookRepository.AddAuthor(author, city, country);
+        }
+
+        public void RemoveAuthor(int id)
+        {
+            BookRepository.DeleteAuthor(id);
+        }
     }
 }
