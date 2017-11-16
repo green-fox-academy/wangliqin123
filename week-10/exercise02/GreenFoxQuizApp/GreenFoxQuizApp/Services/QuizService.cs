@@ -26,48 +26,48 @@ namespace GreenFoxQuizApp.Services
         {
             ListWeNeed = QuizRepository.GetListForService();
 
-            var popsik = new List<AnswerModel>();
+            var answerModelList = new List<AnswerModel>();
 
             for (int i = 0; i < ListWeNeed.Count; i++)
             {
-                var popsi = new AnswerModel();
-                popsi.Id = ListWeNeed[i].Id;
-                popsi.Answer = ListWeNeed[i].Answer;
+                var answerMod = new AnswerModel();
+                answerMod.Id = ListWeNeed[i].Id;
+                answerMod.Answer = ListWeNeed[i].Answer;
 
-                popsik.Add(popsi);
+                answerModelList.Add(answerMod);
             }
 
-            var nagypopsik = new AnswerRound()
+            var answerRod = new AnswerRound()
             {
                 Id = 1,
-                Answers = popsik
+                Answers = answerModelList
             };
 
-            return nagypopsik;
+            return answerRod;
         }
 
         internal QuestionRound FiveQuestionsToJson()
         {
             ListWeNeed = QuizRepository.GetListForService();
 
-            var kukik = new List<QuestionModel>();
+            var questionModelList = new List<QuestionModel>();
 
             for (int i = 0; i < ListWeNeed.Count; i++)
             {
-                var kuki = new QuestionModel();
-                kuki.Id = ListWeNeed[i].Id;
-                kuki.Question = ListWeNeed[i].Question;
+                var questionMo = new QuestionModel();
+                questionMo.Id = ListWeNeed[i].Id;
+                questionMo.Question = ListWeNeed[i].Question;
 
-                kukik.Add(kuki);
+                questionModelList.Add(questionMo);
             }
 
-            var nagykukik = new QuestionRound()
+            var questionRod = new QuestionRound()
             {
                 Id = 1,
-                Questions = kukik
+                Questions = questionModelList
             };
 
-            return nagykukik;
+            return questionRod;
         }
     }
 }
