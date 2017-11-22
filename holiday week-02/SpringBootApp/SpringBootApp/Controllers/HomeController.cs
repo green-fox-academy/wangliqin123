@@ -3,7 +3,7 @@ using SpringBootApp.Services;
 
 namespace SpringBootApp.Controllers
 {
-    [Route("search")]
+    
     public class HomeController : Controller
     {
         SpringBootAppService SpringBootAppService;
@@ -14,31 +14,28 @@ namespace SpringBootApp.Controllers
         }
 
         [HttpGet]
-        [Route("/{inputPlate}")]
-        [Route("/{police}")]
-        [Route("/{diplomat}")]
-        public IActionResult Index([FromQuery] string inputPlate, string police, string diplomat)
+        [Route("/search")]
+        public IActionResult Index(string inputPlate, int police, int diplomat)
         {
-            if (RouteData.Equals(police))
+            if (police == 1)
             {
-                return View(SpringBootAppService.GetPoliceCarsForUser(police));
+                return View(SpringBootAppService.GetPoliceCarsForUser());
             }
-            else if (RouteData.Equals(diplomat))
+            else if (diplomat == 1)
             {
-                return View(SpringBootAppService.GetDiplomatCarsForUser(diplomat));
+                return View(SpringBootAppService.GetDiplomatCarsForUser());
             }
             else
             {
                 return View(SpringBootAppService.GetLicencePlateListForUser(inputPlate));
-            }              
+            }
         }
 
         [HttpGet]
-        [Route("/{brand}/search")]
-        public IActionResult Brand([FromRoute] string inputBrand)
+        [Route("/search/{brand}")]
+        public IActionResult Brand(string brand)
         {
-            SpringBootAppService.GetBrandListForUser(inputBrand);
-            return LocalRedirect("index");
+            return View("Index", SpringBootAppService.GetBrandListForUser(brand));
         }
     }
 }

@@ -19,17 +19,17 @@ namespace SpringBootApp.Repositories
             return SpringBootAppContext.LicenePlates.Where(x => x.Plate.Contains(inputPlate)).ToList();
         }
 
-        public List<LicencePlate> GetBrandList(string inputBrand)
+        public List<LicencePlate> GetBrandList(string brand)
         {
-            return SpringBootAppContext.LicenePlates.Where(x => x.CarBrand.Equals(inputBrand)).ToList();
+            return SpringBootAppContext.LicenePlates.Where(x => x.CarBrand.Contains(brand)).ToList();
         }
 
-        public List<LicencePlate> GetPoliceCars(string police)
+        public List<LicencePlate> GetPoliceCars()
         {
             return SpringBootAppContext.LicenePlates.Where(x => x.Plate.StartsWith("RB")).ToList();
         }
 
-        public List<LicencePlate> GetDiplomatCars(string diplomat)
+        public List<LicencePlate> GetDiplomatCars()
         {
             return SpringBootAppContext.LicenePlates.Where(x => x.Plate.StartsWith("DT")).ToList();
         }

@@ -13,10 +13,10 @@ namespace SpringBootApp.Controllers
         }
 
         [HttpGet]
-        [Route("api/search/{inputBrand}")]
-        public IActionResult BrandListJson(string inputBrand)
+        [Route("api/search/{brand}")]
+        public IActionResult BrandListJson(string brand)
         {
-            var sameBrandOfCars = SpringBootAppService.GetDiplomatCarsForUser(inputBrand);
+            var sameBrandOfCars = SpringBootAppService.GetBrandListForUser(brand);
 
             return Json(new { result = "ok", data = sameBrandOfCars });
         }

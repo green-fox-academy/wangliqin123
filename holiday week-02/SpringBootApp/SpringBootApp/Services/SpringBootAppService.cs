@@ -18,19 +18,19 @@ namespace SpringBootApp.Services
             return SpringBootAppRepository.GetPlateList(inputPlate);
         }
 
-        public List<LicencePlate> GetBrandListForUser(string inputBrand)
+        public List<LicencePlate> GetBrandListForUser(string brand)
         {
-            return SpringBootAppRepository.GetBrandList(inputBrand);
+            return SpringBootAppRepository.GetBrandList(brand);
         }
 
-        public List<LicencePlate> GetPoliceCarsForUser(string police)
+        public List<LicencePlate> GetPoliceCarsForUser()
         {
-            return SpringBootAppRepository.GetPoliceCars(police);
+            return SpringBootAppRepository.GetPoliceCars();
         }
 
-        public List<LicencePlate> GetDiplomatCarsForUser(string diplomat)
+        public List<LicencePlate> GetDiplomatCarsForUser()
         {
-            return SpringBootAppRepository.GetDiplomatCars(diplomat);
+            return SpringBootAppRepository.GetDiplomatCars();
         }
     }
 }
