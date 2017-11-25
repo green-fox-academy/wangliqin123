@@ -6,9 +6,8 @@ namespace SpringBootApp.Models
     {
         public int Id { get; set; }
 
-        [RegularExpression(@"[A-Z]+[0-9]-*$")]
-        [StringLength(7)]
-        [Required(ErrorMessage = "Sorry, the submitted licence plate is not valid")]
+        //[RegularExpression(@"[A-Z]+[0-9]-*$")]
+        [MaxLength(7, ErrorMessage = "Sorry, the submitted licence plate is not valid")]
         public string Plate { get; set; }
 
         public string CarBrand { get; set; }

@@ -23,7 +23,8 @@
             </tr>
         }
     </table>
-    <form action="/search" method="get">
+    @Html.ValidationSummary()
+    <form action="/search" method="get">      
         <h2>Type the licence plate: </h2>
         <label for="Plate"></label>
         <input type="text" name="inputPlate" value="[Required format: ABX-123]" /><br />
@@ -33,5 +34,8 @@
     @Html.ActionLink("Police cars only", "Index", "Home", new { police = 1 })<br />
     <br>
     @Html.ActionLink("Diplomats only", "Index", "Home", new { diplomat = 1 })
+
+    @*<a href="/search?diplomat=1">Diplomats only!</a>
+    <a href="/search?police=1">Police only!</a>*@
 </body>
 </html>
