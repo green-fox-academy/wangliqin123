@@ -1,0 +1,39 @@
+﻿@model List<CalorieApp.Models.Food>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Drax's calorie table</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Food</td>
+            <td>Amount of food</td>
+            <td>Calorie</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Amount</td>
+                <td>@item.Calorie</td>
+            </tr>
+        }
+    </table>
+    <form action="/drax" method="post">
+        <h2>Add new food:</h2>
+        <label for="Name"> Food</label>
+        <input type="text" name="Name" /><br>
+        <label for="Amount">Amount</label>
+        <input type="text" name="Amount" /><br>
+        <label for="Calorie">Calorie</label>
+        <input type="text" name="Calorie" /><br>
+        <br /><button type="submit">ADD</button><br />
+    </form>
+    <form action="drax" method="post">
+        <h2>Delete food:</h2>
+        <label for="Name">Food</label>
+        <input type="text" name="Name" value="" />
+        <br /><button type="submit">Delete</button><br />
+    </form>
+</body>
+</html>

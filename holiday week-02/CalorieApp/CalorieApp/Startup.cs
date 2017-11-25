@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using CalorieApp.Entities;
 using Microsoft.EntityFrameworkCore;
+using CalorieApp.Repositories;
 
 namespace CalorieApp
 {
@@ -18,6 +19,7 @@ namespace CalorieApp
         {
             services.AddMvc();
             services.AddDbContext<CalorieAppContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=caloriemaster;Integrated Security=True;Connect Timeout=30"));
+            services.AddScoped<CalorieAppRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
