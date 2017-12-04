@@ -7,7 +7,7 @@
  - AWS Command Line Interface
 
 ----------
-##How to deploy HTML/CSS or any static file to S3
+## How to deploy HTML/CSS or any static file to S3
 
 ### 1. Listing buckets
 
