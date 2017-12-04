@@ -23,6 +23,7 @@ Your Scrum Master has an AWS IAM (Identity and Access Management) access, so you
 For general use, the aws configure command is the fastest way to set up your AWS CLI installation.
 
 > **$ aws configure**
+
 **AWS Access Key ID** [None]: EXAMPLEID
 
 **AWS Secret Access Key** [None]: Ex2MPl4K4y
