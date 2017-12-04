@@ -24,8 +24,11 @@ For general use, the aws configure command is the fastest way to set up your AWS
 
 > **$ aws configure**
 **AWS Access Key ID** [None]: EXAMPLEID
+
 **AWS Secret Access Key** [None]: Ex2MPl4K4y
+
 **Default region name** [None]: eu-central-1
+
 **Default output format** [None]: just hit *ENTER*
  
 
