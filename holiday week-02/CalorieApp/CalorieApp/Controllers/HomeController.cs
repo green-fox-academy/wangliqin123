@@ -32,7 +32,7 @@ namespace CalorieApp.Controllers
             return View("Index", CalorieAppRepository.GetFoodList());
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("/drax")]
         public IActionResult DeleteFood(string name)
         {
