@@ -1,1 +1,5 @@
-# Lor�nd Szil�gyi's main repository
+# Loránd Szilágyi's main repository
+
+
+
+˙ggg˙
